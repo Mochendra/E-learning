@@ -1,0 +1,40 @@
+/* HALAMAN LOGIN */
+.Background-login {
+    background-image: url('/images/background-login.jpg');
+    background-size: cover;
+}
+
+.form-label {
+    font-size: x-large;
+    font-weight: bold;
+    margin-bottom: 0%;
+}
+
+.italic-text {
+    font-style: italic;
+}
+
+.card {
+    color: rgb(0, 87, 4);
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Path relatif dari folder public */
+    background-size: cover; /* Membuat gambar menutupi seluruh elemen */
+    background-position: center; /* Memusatkan gambar */
+    background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+}
+
+.btn-success {
+    margin-bottom: 20px; /* Jarak bawah dari tombol */
+}
+
+/* DASHBOARD GURU */
+.navbar-brand{
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
