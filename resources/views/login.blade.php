@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
@@ -26,7 +27,7 @@
                         aria-describedby="basic-addon1">
                 </div>
             </div>
-            <button type="button" class="btn btn-success" style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1rem;">Masuk</button>
+            <button type="button" class="btn btn-primary" style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1rem;">Masuk</button>
         </div>
     </div>
 </body>

@@ -28,3 +28,27 @@ Route::get('/dashboard_guru', function () {
     $user = Auth::user();
     return view('dashboard_guru', ['user' => $user]);
 });
+
+Route::get('/kelas_angkatan_guru', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('kelas_angkatan_guru', ['user' => $user]);
+});
+
+Route::get('/kelas_VII', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('kelas_VII', ['user' => $user]);
+});
+
+Route::get('/kelas_VIII', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('kelas_VIII', ['user' => $user]);
+});
+
+Route::get('/kelas_IX', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('kelas_IX', ['user' => $user]);
+});
