@@ -49,16 +49,17 @@
     background-color: #fff;
     color:#0a598d;
 }
-  .table thead th {
-    background-color: #007bff; /* Warna latar belakang header */
-  }
 
-.hari {
-    font-size: x-large;
+.judul_dashboard {
+    font-size: 40px;
     font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style:normal
 }
 
-/* KELAS ANGKATAN */
+/* KELAS ANGKATAN GURU*/
 
 .card-title {
     font-family: "Lora", serif;
@@ -76,12 +77,42 @@
     margin-bottom: 50px;
 }
 
+
+/* KELAS VII | VIII | IX */
+
 .Huruf_Angka{
-    font-size: x-large;
-    font-weight: bold;
+    font-size: medium;
+    font-weight: 400;
 }
 
 .Huruf_Angka_Kedua{
-    font-size: x-large;
-    font-weight: bold;
+    font-size: medium;
+}
+
+.hari {
+    font-size: medium;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.table thead th {
+    background-color: #007bff; /* Warna latar belakang header */
+  }
+
+  .btn-xs {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+  }
+
+  .text-center {
+    text-align: center;
+}
+
+.btn-primary {
+    display: block;
+    margin: 0 auto;
 }

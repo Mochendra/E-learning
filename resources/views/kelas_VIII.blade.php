@@ -11,34 +11,40 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div class="container mt-5">
-        <table class="table table-bordered">
-          <p class="hari">DAFTAR KELAS VIII</p>
-          <thead>
+  <div class="container mt-5">
+    <table class="table table-bordered">
+        <p class="hari">DAFTAR KELAS VIII</p>
+        <thead>
             <tr class="Huruf_Angka">
-              <th scope="col">Kelas</th>
-              <th scope="col">Kode Kelas</th>
-              <th scope="col">Tombol</th>
+                <th scope="col">Kelas</th>
+                <th scope="col">Kode Kelas</th>
+                <th scope="col">Tombol</th>
             </tr>
-          </thead>
-          <tbody class="Huruf_Angka_Kedua">
+        </thead>
+        <tbody class="Huruf_Angka_Kedua">
             <tr>
-              <th scope="row">VIII</th>
-              <td>A</td>
-              <td><button type="button" class="btn btn-primary">Primary</button></td>
-            </tr>
-            <tr>
-              <th scope="row">VIII</th>
-              <td>B</td>
-              <td><button type="button" class="btn btn-primary">Primary</button></td>
+                <th scope="row">VIII</th>
+                <td>A</td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-primary btn-sm">Klik</button>
+                </td>
             </tr>
             <tr>
-              <th scope="row">VIII</th>
-              <td>C</td>
-              <td><button type="button" class="btn btn-primary">Primary</button></td>
+                <th scope="row">VIII</th>
+                <td>B</td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-primary btn-sm">Klik</button>
+                </td>
             </tr>
-          </tbody>
-        </table>
-      </div>
+            <tr>
+                <th scope="row">VIII</th>
+                <td>C</td>
+                <td class="text-center">
+                    <button type="button" class="btn btn-primary btn-sm">Klik</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

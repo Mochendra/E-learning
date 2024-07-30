@@ -30,7 +30,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active text-white" aria-current="page" href="#">Pilih Kelas Mengajar</a> <!-- Menggunakan kelas text-white -->
+            <a class="nav-link active text-white" aria-current="page" href="/kelas_angkatan_guru">Pilih Kelas Mengajar</a> <!-- Menggunakan kelas text-white -->
           </li>
         </ul>
       </div>
@@ -38,7 +38,8 @@
   </nav>
       <div class="container mt-5">
         <table class="table table-bordered">
-          <p class="hari">SENIN</p>
+          <p class="judul_dashboard">Jadwal Mengajar</p>
+          <p class="hari">Senin</p>
           <thead>
             <tr>
               <th scope="col">No.</th>

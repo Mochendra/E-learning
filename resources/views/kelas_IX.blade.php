@@ -25,17 +25,17 @@
             <tr>
               <th scope="row">IX</th>
               <td>A</td>
-              <td><button type="button" class="btn btn-primary">Primary</button></td>
+              <td><button type="button" class="btn btn-primary btn-sm">Klik</button></td>
             </tr>
             <tr>
               <th scope="row">IX</th>
               <td>B</td>
-              <td><button type="button" class="btn btn-primary">Primary</button></td>
+              <td><button type="button" class="btn btn-primary btn-sm">Klik</button></td>
             </tr>
             <tr>
               <th scope="row">IX</th>
               <td>C</td>
-              <td><button type="button" class="btn btn-primary">Primary</button></td>
+              <td><button type="button" class="btn btn-primary btn-sm">Klik</button></td>
             </tr>
           </tbody>
         </table>

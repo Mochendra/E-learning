@@ -22,7 +22,7 @@
             <div class="card-body">
               <h5 class="card-title">Kelas VII</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="/kelas_VII" class="btn btn-primary">Pilih Kelas</a>
             </div>
           </div>
           <div class="card m-2" style="width: 18rem;">
@@ -30,7 +30,7 @@
             <div class="card-body">
               <h5 class="card-title">Kelas VIII</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="/kelas_VIII" class="btn btn-primary">Pilih Kelas</a>
             </div>
           </div>
           <div class="card m-2" style="width: 18rem;">
@@ -38,7 +38,7 @@
             <div class="card-body">
               <h5 class="card-title">Kelas IX</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <a href="/kelas_IX" class="btn btn-primary">Pilih Kelas</a>
             </div>
           </div>
         </div>
