@@ -14,6 +14,18 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-custom"> 
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="{{ asset('illustrations/logo.png') }}" alt="Logo" style="width: 40px; height: 45px; margin-right: 10px;">
+      </a>
+      <a class="navbar-brand text-white" href="#">Dashboard Guru</a> <!-- Menggunakan kelas text-white untuk teks putih -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+      </div>
+    </div>
+  </nav>
     <div class="container mt-5">
         <h6 class="Judul_kelas_utama text-center">Pilih Kelas</h6>
         <div class="d-flex justify-content-center flex-wrap">

@@ -80,14 +80,13 @@
 
 /* KELAS VII | VIII | IX */
 
-.Huruf_Angka{
+.Huruf_Angka, .Huruf_Angka_Kedua th, .Huruf_Angka_Kedua td {
     font-size: medium;
     font-weight: 400;
+    text-align: center;
+    vertical-align: middle; /* Ensures vertical centering */
 }
 
-.Huruf_Angka_Kedua{
-    font-size: medium;
-}
 
 .hari {
     font-size: medium;
@@ -101,18 +100,14 @@
     background-color: #007bff; /* Warna latar belakang header */
   }
 
-  .btn-xs {
+.btn-xs {
     padding: 0.25rem 0.5rem;
     font-size: 0.75rem;
     line-height: 1.5;
     border-radius: 0.2rem;
-  }
-
-  .text-center {
-    text-align: center;
 }
 
 .btn-primary {
-    display: block;
+    /* display: block; */
     margin: 0 auto;
 }

@@ -11,6 +11,18 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg navbar-custom"> 
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="{{ asset('illustrations/logo.png') }}" alt="Logo" style="width: 40px; height: 45px; margin-right: 10px;">
+      </a>
+      <a class="navbar-brand text-white" href="#">Dashboard Guru</a> <!-- Menggunakan kelas text-white untuk teks putih -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        </ul>
+      </div>
+    </div>
+  </nav>
     <div class="container mt-5">
         <table class="table table-bordered">
           <p class="hari">DAFTAR KELAS IX</p>
@@ -25,17 +37,23 @@
             <tr>
               <th scope="row">IX</th>
               <td>A</td>
-              <td><button type="button" class="btn btn-primary btn-sm">Klik</button></td>
+              <td class="text-center">
+                <button type="button" class="btn btn-primary btn-sm">Pilih</button>
+              </td>
             </tr>
             <tr>
               <th scope="row">IX</th>
               <td>B</td>
-              <td><button type="button" class="btn btn-primary btn-sm">Klik</button></td>
+              <td class="text-center">
+                <button type="button" class="btn btn-primary btn-sm">Pilih</button>
+              </td>
             </tr>
             <tr>
               <th scope="row">IX</th>
               <td>C</td>
-              <td><button type="button" class="btn btn-primary btn-sm">Klik</button></td>
+              <td class="text-center">
+                <button type="button" class="btn btn-primary btn-sm">Pilih</button>
+              </td>
             </tr>
           </tbody>
         </table>
