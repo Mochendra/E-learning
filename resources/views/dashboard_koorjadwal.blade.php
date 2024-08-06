@@ -9,14 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap"
         rel="stylesheet">
-
+    
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
@@ -45,14 +45,14 @@
         </div>
     </nav>
     <div class="container mt-5">
+        <p class="judul_dashboard">Jadwal Mengajar</p>
         <table class="table table-bordered">
-            <p class="judul_dashboard">Jadwal Mengajar</p>
-            <p class="hari">KELAS VII</p>
             <thead>
                 <tr>
-                    <th scope="col">Kelas</th>
+                    <th colspan="11" class="angkatan">KELAS VII</th>
+                </tr>
+                <tr>
                     <th scope="col">Hari</th>
-                    <th scope="col">Waktu</th>
                     <th scope="col">Jam</th>
                     <th scope="col">A</th>
                     <th scope="col">B</th>
@@ -61,50 +61,94 @@
                     <th scope="col">F</th>
                     <th scope="col">G</th>
                     <th scope="col">H</th>
+                    <th scope="col">I</th>
+                    <th scope="col">J</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">VII</th>
-                    <td>SENIN</td>
-                    <td>07 : 00</td>
-                    <td>Seni Budaya</td>
-                    <td>1</td>
+                <tr class="grey-row">
+                    <th scope="row" rowspan="6" class="kelas">SENIN</th>
+                    <td>07.00 - 08.00</td>
+                    <td class="kolom-kode fixed-width"> <div class="btn-group">
+                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Pilih
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">1 G</a></li>
+                            <li><a class="dropdown-item" href="#">2 E</a></li>
+                            <li><a class="dropdown-item" href="#">3 D</a></li>
+                            {{-- <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Separated link</a></li> --}}
+                        </ul>
+                    </div></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-                <tr>
-                    <th scope="row">VII</th>
-                    <td>SELASA</td>
-                    <td>09 : 00</td>
-                    <td>Seni Budaya</td>
-                    <td>2</td>
+                <tr class="white-row">
+                    <td>08:00 - 08:40</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-                <tr>
-                    <th scope="row">VII</th>
-                    <td>RABU</td>
-                    <td>12 : 00</td>
-                    <td>Seni Budaya</td>
-                    <td>19</td>
+                <tr class="grey-row">
+                    <td>08.40 - 09.20</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-                <tr>
-                    <th scope="row">VII</th>
+                <tr class="white-row">
                     <td>KAMIS</td>
-                    <td>12 : 00</td>
-                    <td>Seni Budaya</td>
-                    <td>9</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-                <tr>
-                    <th scope="row">VII</th>
+                <tr class="grey-row">
                     <td>JUMAT</td>
-                    <td>12 : 00</td>
-                    <td>Seni Budaya</td>
-                    <td>8</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
-                <tr>
-                    <th scope="row">VII</th>
+                <tr class="white-row">
                     <td>SABTU</td>
-                    <td>12 : 00</td>
-                    <td>Seni Budaya</td>
-                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             </tbody>
         </table>

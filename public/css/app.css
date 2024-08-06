@@ -88,12 +88,33 @@
 }
 
 
-.hari {
-    font-size: medium;
+.angkatan {
+    font-size: large;
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
+    font-weight: 300;
+    font-style: bold;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+}
+
+.kelas {
+    font-size: large;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: bold;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #007bff;
+    color: white;
+}
+
+
+.table th, .table td {
+    text-align: center;
+    border: 1px solid #000000;
 }
 
 .table thead th {
@@ -111,3 +132,12 @@
     /* display: block; */
     margin: 0 auto;
 }
+
+.fixed-width {
+    width: 100px; /* Sesuaikan lebar sesuai kebutuhan Anda */
+    max-width: 100px; /* Pastikan kolom tidak melebar lebih dari ini */
+    min-width: 100px; /* Pastikan kolom tidak mengecil lebih dari ini */
+    text-overflow: ellipsis; /* Menambahkan elipsis (...) jika konten terlalu panjang */
+    white-space: nowrap; /* Menghindari pembungkusan teks */
+}
+
