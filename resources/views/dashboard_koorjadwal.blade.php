@@ -44,115 +44,119 @@
             </div>
         </div>
     </nav>
-    <div class="container mt-5">
-        <p class="judul_dashboard">Jadwal Mengajar</p>
+   <div class="container mt-5">
+        <div class="d-flex align-items-center justify-content-between flex-wrap mb-4">
+            <p class="judul_dashboard mb-3">Jadwal Mengajar</p>
+            <div class="d-flex align-items-center">
+                <button class="btn btn-outline-success btn-sm me-2" type="button" data-bs-toggle="modal" data-bs-target="#addScheduleModal">Tambah Data</button>
+            </div>
+        </div>
+
+        <!-- Table displaying the schedule -->
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th colspan="11" class="angkatan">KELAS VII</th>
-                </tr>
-                <tr>
-                    <th scope="col">Hari</th>
+                    <th scope="col">No.</th>
+                    <th scope="col">Hari</th>        
                     <th scope="col">Jam</th>
-                    <th scope="col">A</th>
-                    <th scope="col">B</th>
-                    <th scope="col">C</th>
-                    <th scope="col">D</th>
-                    <th scope="col">F</th>
-                    <th scope="col">G</th>
-                    <th scope="col">H</th>
-                    <th scope="col">I</th>
-                    <th scope="col">J</th>
+                    <th scope="col">Guru</th>
+                    <th scope="col">Mata Pelajaran</th>
+                    <th scope="col">Kelas</th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="grey-row">
-                    <th scope="row" rowspan="6" class="kelas">SENIN</th>
-                    <td>07.00 - 08.00</td>
-                    <td class="kolom-kode fixed-width"> <div class="btn-group">
-                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Pilih
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">1 G</a></li>
-                            <li><a class="dropdown-item" href="#">2 E</a></li>
-                            <li><a class="dropdown-item" href="#">3 D</a></li>
-                            {{-- <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li> --}}
-                        </ul>
-                    </div></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Senin</td>
+                    <td>07 : 00</td>
+                    <td>Ahmad</td>
+                    <td>Seni Budaya</td>
+                    <td>7F</td>
                 </tr>
-                <tr class="white-row">
-                    <td>08:00 - 08:40</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Rabu</td>
+                    <td>09 : 00</td>
+                    <td>Habib</td>
+                    <td>Kimia</td>
+                    <td>7H</td>
                 </tr>
-                <tr class="grey-row">
-                    <td>08.40 - 09.20</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="white-row">
-                    <td>KAMIS</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="grey-row">
-                    <td>JUMAT</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr class="white-row">
-                    <td>SABTU</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Jumat</td>
+                    <td>12 : 00</td>
+                    <td>Rizky</td>
+                    <td>Matematika</td>
+                    <td>9A</td>
                 </tr>
             </tbody>
         </table>
     </div>
+
+    <!-- Modal for adding a new schedule -->
+    <div class="modal fade" id="addScheduleModal" tabindex="-1" aria-labelledby="addScheduleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addScheduleModalLabel">Tambah Jadwal Mengajar</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addScheduleForm">
+                        <div class="mb-3">
+                            <label for="guru" class="form-label">Pilih Guru</label>
+                            <select class="form-select" id="guru" name="guru">
+                                <option value="">Pilih Guru</option>
+                                <option value="Ahmad">Ahmad</option>
+                                <option value="Habib">Habib</option>
+                                <option value="Rizky">Rizky</option>
+                                <option value="Bima">Bima</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mapel" class="form-label">Pilih Mapel</label>
+                            <select class="form-select" id="mapel" name="mapel">
+                                <option value="">Pilih Mapel</option>
+                                <option value="B. Indonesia">B. Indonesia</option>
+                                <option value="B. Inggris">B. Inggris</option>
+                                <option value="Matematika">Matematika</option>
+                                <option value="Kimia">Kimia</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="kelas" class="form-label">Pilih Kelas</label>
+                            <select class="form-select" id="kelas" name="kelas">
+                                <option value="">Pilih Kelas</option>
+                                <option value="7A">7 A</option>
+                                <option value="7B">7 B</option>
+                                <option value="7C">7 C</option>
+                                <option value="7D">7 D</option>
+                                <option value="8A">8 A</option>
+                                <option value="8B">8 B</option>
+                                <option value="8C">8 C</option>
+                                <option value="8D">8 D</option>
+                                <option value="9A">9 A</option>
+                                <option value="9B">9 B</option>
+                                <option value="9C">9 C</option>
+                                <option value="9D">9 D</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hari" class="form-label">Hari</label>
+                            <input type="text" class="form-control" id="hari" name="hari">
+                        </div>
+                        <div class="mb-3">
+                            <label for="jam" class="form-label">Jam</label>
+                            <input type="text" class="form-control" id="jam" name="jam">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Tambah Jadwal</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,6 +36,12 @@ Route::get('/dashboard_koorjadwal', function () {
     return view('dashboard_koorjadwal', ['user' => $user]);
 });
 
+Route::get('/dashboard_siswa', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('dashboard_siswa', ['user' => $user]);
+});
+
 Route::get('/kelas_angkatan_guru', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
@@ -65,3 +72,14 @@ Route::get('/materi_kelas_IX', function () {
     return view('materi_kelas_IX', ['user' => $user]);
 });
 
+Route::get('/kelas_IX_siswa', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('kelas_IX_siswa', ['user' => $user]);
+});
+
+Route::get('/kelas_IX_siswa_detail', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('kelas_IX_siswa_detail', ['user' => $user]);
+});

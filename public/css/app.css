@@ -141,3 +141,90 @@
     white-space: nowrap; /* Menghindari pembungkusan teks */
 }
 
+/* Dashboard Siswa */
+
+.nomor_nama {
+    text-align: left;
+    display: flex;
+    gap: 8px;
+}
+
+.card-minggu{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-isi-siswa {
+    text-align: left;
+    width: 100%;
+}
+
+/* Siswa kelas (Minggu) */
+
+/* Siswa Kelas (Detail) */
+.siswa-detail{
+    width:100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.siswa-detail-detail{
+    width:100%;
+}
+.siswa-detail-footer{
+    width:100%;
+}
+
+.button-submit-tugas {
+    width: 100%;
+    display: flex;
+    place-items: inherit;
+    align-items: flex-end;
+    justify-items: flex-start;
+    justify-content: flex-end; /* Aligns the button to the right */
+}
+
+
+/* Adjusting Dropdown and Search Button for Responsiveness */
+@media (max-width: 768px) {
+    .judul_dashboard {
+        font-size: 30px;
+    }
+
+    .table th, .table td {
+        font-size: small;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .form-select-sm {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn-outline-success {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .judul_dashboard {
+        font-size: 25px;
+        width: 100%;
+    }
+
+    .table th, .table td {
+        font-size: x-small;
+        padding: 5px;
+    }
+
+    .form-select-sm {
+        font-size: small;
+    }
+
+    .btn-outline-success {
+        font-size: small;
+    }
+}
