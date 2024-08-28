@@ -9,14 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap"
         rel="stylesheet">
-    
+
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 
@@ -44,11 +44,12 @@
             </div>
         </div>
     </nav>
-   <div class="container mt-5">
+    <div class="container mt-5">
         <div class="d-flex align-items-center justify-content-between flex-wrap mb-4">
             <p class="judul_dashboard mb-3">Jadwal Mengajar</p>
             <div class="d-flex align-items-center">
-                <button class="btn btn-outline-success btn-sm me-2" type="button" data-bs-toggle="modal" data-bs-target="#addScheduleModal">Tambah Data</button>
+                <button class="btn btn-outline-success btn-sm me-2" type="button" data-bs-toggle="modal"
+                    data-bs-target="#addScheduleModal">Tambah Data</button>
             </div>
         </div>
 
@@ -57,7 +58,7 @@
             <thead>
                 <tr>
                     <th scope="col">No.</th>
-                    <th scope="col">Hari</th>        
+                    <th scope="col">Hari</th>
                     <th scope="col">Jam</th>
                     <th scope="col">Guru</th>
                     <th scope="col">Mata Pelajaran</th>
@@ -94,7 +95,8 @@
     </div>
 
     <!-- Modal for adding a new schedule -->
-    <div class="modal fade" id="addScheduleModal" tabindex="-1" aria-labelledby="addScheduleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="addScheduleModal" tabindex="-1" aria-labelledby="addScheduleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

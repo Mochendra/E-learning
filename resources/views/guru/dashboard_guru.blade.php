@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,33 +9,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Russo+One&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Russo+One&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
+
 <body class="Background-dashboard-guru">
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="{{ asset('illustrations/logo.png') }}" alt="Logo" style="width: 40px; height: 45px; margin-right: 10px;">
+                <img src="{{ asset('illustrations/logo.png') }}" alt="Logo"
+                    style="width: 40px; height: 45px; margin-right: 10px;">
             </a>
             <a class="navbar-brand text-white" href="#">Dashboard Guru</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="/kelas_angkatan_guru">Pilih Kelas Mengajar</a>
+                        <a class="nav-link active text-white" aria-current="page" href="/kelas_angkatan_guru">Pilih
+                            Kelas Mengajar</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    
+
     <div class="container mt-5">
         <div class="d-flex align-items-center justify-content-between flex-wrap">
             <p class="judul_dashboard mb-3">Jadwal Mengajar</p>
@@ -47,7 +55,7 @@
                     <option value="Rizky">Rizky</option>
                     <option value="Bima">Bima</option>
                 </select>
-                
+
                 <!-- Dropdown for selecting a subject -->
                 <select class="form-select form-select-sm me-2" id="mapelDropdown">
                     <option value="">Pilih Mapel</option>
@@ -56,7 +64,7 @@
                     <option value="Matematika">Matematika</option>
                     <option value="Kimia">Kimia</option>
                 </select>
-        
+
                 <!-- Dropdown for selecting a class -->
                 <select class="form-select form-select-sm me-2" id="kelasDropdown">
                     <option value="">Pilih Kelas</option>
@@ -65,7 +73,7 @@
                     <option value="7C">7 C</option>
                     <option value="7D">7 D</option>
                 </select>
-        
+
                 <!-- Search Button -->
                 <button class="btn btn-outline-success btn-sm" type="button" onclick="filterData()">Search</button>
             </div>
@@ -111,4 +119,5 @@
         </table>
     </div>
 </body>
+
 </html>

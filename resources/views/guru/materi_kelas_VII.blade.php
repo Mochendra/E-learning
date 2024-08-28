@@ -41,37 +41,37 @@
                 <tr>
                     <th scope="row">Minggu 1</th>
                     <td>
-                        <a href="/tambah-minggu-1" class="btn btn-danger btn-sm w-100">Tambah</a>
+                        <a href="/materi_kelas_VII_detail" class="btn btn-danger btn-sm w-100">Tambah</a>
                     </td>
                     <td>
-                        <a href="/lihat-tugas-minggu-1" class="btn btn-warning btn-sm w-100">Lihat</a>
+                        <a href="/materi_kelas_VII_detail" class="btn btn-warning btn-sm w-100">Lihat</a>
                     </td>
                     <td>
-                        <a href="/lihat-quiz-minggu-1" class="btn btn-success btn-sm w-100">Lihat</a>
+                        <a href="/materi_kelas_VII_detail" class="btn btn-success btn-sm w-100">Lihat</a>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Minggu 2</th>
                     <td>
-                        <a href="/tambah-minggu-2" class="btn btn-danger btn-sm w-100">Tambah</a>
+                        <a href="/materi_kelas_VII_detail" class="btn btn-danger btn-sm w-100">Tambah</a>
                     </td>
                     <td>
-                        <a href="/lihat-tugas-minggu-2" class="btn btn-warning btn-sm w-100">Lihat</a>
+                        <a href="/materi_kelas_VII_detail" class="btn btn-warning btn-sm w-100">Lihat</a>
                     </td>
                     <td>
-                        <a href="/lihat-quiz-minggu-2" class="btn btn-success btn-sm w-100">Lihat</a>
+                        <a href="/materi_kelas_VII_detail" class="btn btn-success btn-sm w-100">Lihat</a>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Minggu 3</th>
                     <td>
-                        <a href="/tambah-minggu-3" class="btn btn-danger btn-sm w-100">Tambah</a>
+                        <a href="/materi_kelas_VII_detail" class="btn btn-danger btn-sm w-100">Tambah</a>
                     </td>
                     <td>
-                        <a href="/lihat-tugas-minggu-3" class="btn btn-warning btn-sm w-100">Lihat</a>
+                        <a href="/materi_kelas_VII_detail" class="btn btn-warning btn-sm w-100">Lihat</a>
                     </td>
                     <td>
-                        <a href="/lihat-quiz-minggu-3" class="btn btn-success btn-sm w-100">Lihat</a>
+                        <a href="/materi_kelas_VII_detail" class="btn btn-success btn-sm w-100">Lihat</a>
                     </td>
                 </tr>
             </tbody>

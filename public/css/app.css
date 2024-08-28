@@ -184,7 +184,6 @@
     justify-content: flex-end; /* Aligns the button to the right */
 }
 
-
 /* Adjusting Dropdown and Search Button for Responsiveness */
 @media (max-width: 768px) {
     .judul_dashboard {
