@@ -26,7 +26,7 @@
                         aria-describedby="basic-addon1">
                 </div>
             </div>
-            <button type="button" class="btn btn-success" style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1rem;">Masuk</button>
+            <button type="button" class="btn btn-success" style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1rem; margin-bottom:40px;">Masuk</button>
         </div>
     </div>
 </body>
