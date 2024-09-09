@@ -41,37 +41,46 @@
                 <tr>
                     <th scope="row">Minggu 1</th>
                     <td>
-                        <a href="/materi_kelas_VII_detail" class="btn btn-danger btn-sm w-100">Tambah</a>
+                        <div style="display: flex; width:100%; flex-direction:row; gap: 4px; "> 
+                        <a href="/materi_kelas_VII_materi" class="btn btn-danger btn-sm w-100">Tambah Materi</a>
+                        <a href="/materi_kelas_VII_pengumpulan" class="btn btn-danger btn-sm w-100">Tambah Pengumpulan</a>
+                        <a href="/materi_kelas_VII_quiz" class="btn btn-danger btn-sm w-100">Tambah Quiz</a>
+                    </div>
+                    <td>
+                        <a href="/hasil_tugas_kelas_VII" class="btn btn-warning btn-sm w-100">Lihat</a>
                     </td>
                     <td>
-                        <a href="/materi_kelas_VII_detail" class="btn btn-warning btn-sm w-100">Lihat</a>
-                    </td>
-                    <td>
-                        <a href="/materi_kelas_VII_detail" class="btn btn-success btn-sm w-100">Lihat</a>
+                        <a href="/hasil_quiz_kelas_VII" class="btn btn-success btn-sm w-100">Lihat</a>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Minggu 2</th>
                     <td>
-                        <a href="/materi_kelas_VII_detail" class="btn btn-danger btn-sm w-100">Tambah</a>
+                        <div style="display: flex; width:100%; flex-direction:row; gap: 4px; "> 
+                        <a href="/materi_kelas_VII_materi" class="btn btn-danger btn-sm w-100">Tambah Materi</a>
+                        <a href="/materi_kelas_VII_pengumpulan" class="btn btn-danger btn-sm w-100">Tambah Pengumpulan</a>
+                        <a href="/materi_kelas_VII_quiz" class="btn btn-danger btn-sm w-100">Tambah Quiz</a>
+                    </div>
+                    <td>
+                        <a href="/hasil_tugas_kelas_VII" class="btn btn-warning btn-sm w-100">Lihat</a>
                     </td>
                     <td>
-                        <a href="/materi_kelas_VII_detail" class="btn btn-warning btn-sm w-100">Lihat</a>
-                    </td>
-                    <td>
-                        <a href="/materi_kelas_VII_detail" class="btn btn-success btn-sm w-100">Lihat</a>
+                        <a href="/hasil_quiz_kelas_VII" class="btn btn-success btn-sm w-100">Lihat</a>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Minggu 3</th>
                     <td>
-                        <a href="/materi_kelas_VII_detail" class="btn btn-danger btn-sm w-100">Tambah</a>
+                        <div style="display: flex; width:100%; flex-direction:row; gap: 4px; "> 
+                        <a href="/materi_kelas_VII_materi" class="btn btn-danger btn-sm w-100">Tambah Materi</a>
+                        <a href="/materi_kelas_VII_pengumpulan" class="btn btn-danger btn-sm w-100">Tambah Pengumpulan</a>
+                        <a href="/materi_kelas_VII_quiz" class="btn btn-danger btn-sm w-100">Tambah Quiz</a>
+                    </div>
+                    <td>
+                        <a href="/hasil_tugas_kelas_VII" class="btn btn-warning btn-sm w-100">Lihat</a>
                     </td>
                     <td>
-                        <a href="/materi_kelas_VII_detail" class="btn btn-warning btn-sm w-100">Lihat</a>
-                    </td>
-                    <td>
-                        <a href="/materi_kelas_VII_detail" class="btn btn-success btn-sm w-100">Lihat</a>
+                        <a href="/hasil_quiz_kelas_VII" class="btn btn-success btn-sm w-100">Lihat</a>
                     </td>
                 </tr>
             </tbody>
@@ -81,3 +90,5 @@
 </body>
 
 </html>
+{{-- ctrl + shift + k --}}
+{{-- shift + alt + panah bawah --}}

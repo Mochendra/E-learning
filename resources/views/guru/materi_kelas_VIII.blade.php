@@ -27,7 +27,7 @@
         </div>
     </nav>
     <div class="container mt-5">
-        <h2 class="judul_dashboard text-center">Materi Kelas VII</h2>
+        <h2 class="judul_dashboard text-center">Materi Kelas VIII</h2>
         <table class="table table-bordered">
             <thead>
                 <tr class="Huruf_Angka">
@@ -41,37 +41,46 @@
                 <tr>
                     <th scope="row">Minggu 1</th>
                     <td>
-                        <a href="/tambah-minggu-1" class="btn btn-danger btn-sm w-100">Tambah</a>
+                        <div style="display: flex; width:100%; flex-direction:row; gap: 4px; "> 
+                        <a href="/materi_kelas_VII_materi" class="btn btn-danger btn-sm w-100">Tambah Materi</a>
+                        <a href="/materi_kelas_VII_pengumpulan" class="btn btn-danger btn-sm w-100">Tambah Pengumpulan</a>
+                        <a href="/materi_kelas_VII_quiz" class="btn btn-danger btn-sm w-100">Tambah Quiz</a>
+                    </div>
+                    <td>
+                        <a href="/hasil_tugas_kelas_VII" class="btn btn-warning btn-sm w-100">Lihat</a>
                     </td>
                     <td>
-                        <a href="/lihat-tugas-minggu-1" class="btn btn-warning btn-sm w-100">Lihat</a>
-                    </td>
-                    <td>
-                        <a href="/lihat-quiz-minggu-1" class="btn btn-success btn-sm w-100">Lihat</a>
+                        <a href="/hasil_quiz_kelas_VII" class="btn btn-success btn-sm w-100">Lihat</a>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Minggu 2</th>
                     <td>
-                        <a href="/tambah-minggu-2" class="btn btn-danger btn-sm w-100">Tambah</a>
+                        <div style="display: flex; width:100%; flex-direction:row; gap: 4px; "> 
+                        <a href="/materi_kelas_VII_materi" class="btn btn-danger btn-sm w-100">Tambah Materi</a>
+                        <a href="/materi_kelas_VII_pengumpulan" class="btn btn-danger btn-sm w-100">Tambah Pengumpulan</a>
+                        <a href="/materi_kelas_VII_quiz" class="btn btn-danger btn-sm w-100">Tambah Quiz</a>
+                    </div>
+                    <td>
+                        <a href="/hasil_tugas_kelas_VII" class="btn btn-warning btn-sm w-100">Lihat</a>
                     </td>
                     <td>
-                        <a href="/lihat-tugas-minggu-2" class="btn btn-warning btn-sm w-100">Lihat</a>
-                    </td>
-                    <td>
-                        <a href="/lihat-quiz-minggu-2" class="btn btn-success btn-sm w-100">Lihat</a>
+                        <a href="/hasil_quiz_kelas_VII" class="btn btn-success btn-sm w-100">Lihat</a>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">Minggu 3</th>
                     <td>
-                        <a href="/tambah-minggu-3" class="btn btn-danger btn-sm w-100">Tambah</a>
+                        <div style="display: flex; width:100%; flex-direction:row; gap: 4px; "> 
+                        <a href="/materi_kelas_VII_materi" class="btn btn-danger btn-sm w-100">Tambah Materi</a>
+                        <a href="/materi_kelas_VII_pengumpulan" class="btn btn-danger btn-sm w-100">Tambah Pengumpulan</a>
+                        <a href="/materi_kelas_VII_quiz" class="btn btn-danger btn-sm w-100">Tambah Quiz</a>
+                    </div>
+                    <td>
+                        <a href="/hasil_tugas_kelas_VII" class="btn btn-warning btn-sm w-100">Lihat</a>
                     </td>
                     <td>
-                        <a href="/lihat-tugas-minggu-3" class="btn btn-warning btn-sm w-100">Lihat</a>
-                    </td>
-                    <td>
-                        <a href="/lihat-quiz-minggu-3" class="btn btn-success btn-sm w-100">Lihat</a>
+                        <a href="/hasil_quiz_kelas_VII" class="btn btn-success btn-sm w-100">Lihat</a>
                     </td>
                 </tr>
             </tbody>
@@ -81,3 +90,5 @@
 </body>
 
 </html>
+{{-- ctrl + shift + k --}}
+{{-- shift + alt + panah bawah --}}

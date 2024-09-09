@@ -42,22 +42,88 @@ Route::get('/kelas_VII', function () {
     return view('guru.kelas_VII', ['user' => $user]);
 });
 
+// ===================
+
+Route::get('/materi_kelas_VII', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.materi_kelas_VII', ['user' => $user]);
+});
+
+Route::get('/materi_kelas_VII_materi', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.materi_kelas_VII_materi', ['user' => $user]);
+});
+
+Route::get('/materi_kelas_VII_quiz', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.materi_kelas_VII_quiz', ['user' => $user]);
+});
+
+Route::get('/materi_kelas_VII_pengumpulan', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.materi_kelas_VII_pengumpulan', ['user' => $user]);
+});
+
+Route::get('/hasil_tugas_kelas_VII', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.hasil_tugas_kelas_VII', ['user' => $user]);
+});
+
+Route::get('/hasil_quiz_kelas_VII', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.hasil_quiz_kelas_VII', ['user' => $user]);
+});
+
+//======================
+
 Route::get('/kelas_VIII', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
     return view('guru.kelas_VIII', ['user' => $user]);
 });
 
+Route::get('/materi_kelas_VIII_materi', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.materi_kelas_VIII_materi', ['user' => $user]);
+});
+
+Route::get('/materi_kelas_VIII_quiz', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.materi_kelas_VIII_quiz', ['user' => $user]);
+});
+
+Route::get('/materi_kelas_VIII_pengumpulan', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.materi_kelas_VIII_pengumpulan', ['user' => $user]);
+});
+
+Route::get('/hasil_tugas_kelas_VIII', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.hasil_tugas_kelas_VIII', ['user' => $user]);
+});
+
+Route::get('/hasil_quiz_kelas_VIII', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.hasil_tugas_quiz_VIII', ['user' => $user]);
+});
+
+// =======================
+
 Route::get('/kelas_IX', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
     return view('guru.kelas_IX', ['user' => $user]);
-});
-
-Route::get('/materi_kelas_VII', function () {
-    // Mengirim data ke tampilan Blade
-    $user = Auth::user();
-    return view('guru.materi_kelas_VII', ['user' => $user]);
 });
 
 Route::get('/materi_kelas_VIII', function () {
@@ -72,11 +138,37 @@ Route::get('/materi_kelas_IX', function () {
     return view('guru.materi_kelas_IX', ['user' => $user]);
 });
 
-Route::get('/materi_kelas_VII_detail', function () {
+Route::get('/materi_kelas_IX_materi', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
-    return view('guru.materi_kelas_VII_detail', ['user' => $user]);
+    return view('guru.materi_kelas_IX_materi', ['user' => $user]);
 });
+
+Route::get('/materi_kelas_IX_quiz', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.materi_kelas_IX_quiz', ['user' => $user]);
+});
+
+Route::get('/materi_kelas_IX_pengumpulan', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.materi_kelas_IX_pengumpulan', ['user' => $user]);
+});
+
+Route::get('/hasil_tugas_kelas_IX', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.hasil_tugas_kelas_IX', ['user' => $user]);
+});
+
+Route::get('/hasil_quiz_kelas_IX', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.hasil_quiz_kelas_IX', ['user' => $user]);
+});
+
+// =======================
 
 Route::get('/kelas_IX_siswa', function () {
     // Mengirim data ke tampilan Blade

@@ -40,21 +40,21 @@
                     <th scope="row">VII</th>
                     <td>A</td>
                     <td>
-                      <a href="/materi_kelas_VII" class="btn btn-primary btn-sm">Pilih</a>
+                      <a href="/materi_kelas_VII" class="btn btn-primary btn-sm w-100">Pilih</a>
                     </td>
                 </tr>
                 <tr class="text-center">
                     <th scope="row">VII</th>
                     <td>B</td>
                     <td>
-                        <a href="/materi_kelas_VII" class="btn btn-primary btn-sm">Pilih</a>
+                        <a href="/materi_kelas_VII" class="btn btn-primary btn-sm w-100">Pilih</a>
                     </td>
                 </tr>
                 <tr class="text-center">
                     <th scope="row">VII</th>
                     <td>C</td>
                     <td>
-                        <a href="/materi_kelas_VII" class="btn btn-primary btn-sm">Pilih</a>
+                        <a href="/materi_kelas_VII" class="btn btn-primary btn-sm w-100">Pilih</a>
                     </td>
                 </tr>
             </tbody>

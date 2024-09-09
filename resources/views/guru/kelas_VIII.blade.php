@@ -54,7 +54,7 @@
                     <th scope="row">VIII</th>
                     <td>C</td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-primary btn-sm">Pilih</button>
+                        <button type="button" class="btn btn-primary btn-sm w-100">Pilih</button>
                     </td>
                 </tr>
             </tbody>
