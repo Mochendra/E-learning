@@ -51,7 +51,7 @@
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <button class="btn btn-primary" type="button"
-                            style="width: 100%; margin-top: 20px; margin-bottom:20px;">Button</button>
+                            style="width: 60%; margin-top: 20px; margin-bottom:20px;">Button</button>
                     </div>
                 </div>
                 <div class="card-footer siswa-detail-footer">
@@ -59,5 +59,15 @@
                 </div>
             </div>
         </div>
+        <div class="card-group siswa-detail">
+            <div class="card siswa-detail-detail">
+                <h5 class="card-title">Quiz</h5>
+                <p class="card-text">Klik untuk memulai quiz</p>
+                <button class="btn btn-primary" type="button" style="width: 30%; margin-bottom:20px;"
+                    onclick="window.location.href='/kelas_IX_siswa_quiz';">
+                    Mulai
+                </button>
+            </div>
+        </div>        
     </div>
 </body>

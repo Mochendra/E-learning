@@ -204,6 +204,24 @@ Route::get('/kelas_VII_siswa_detail', function () {
     return view('siswa.kelas_VII_siswa_detail', ['user' => $user]);
 });
 
+Route::get('/kelas_VII_siswa_quiz', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VII_siswa_quiz', ['user' => $user]);
+});
+
+Route::get('/kelas_VIII_siswa_quiz', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VIII_siswa_quiz', ['user' => $user]);
+});
+
+Route::get('/kelas_IX_siswa_quiz', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_IX_siswa_quiz', ['user' => $user]);
+});
+
 Route::get('/kelas_VIII_siswa_detail', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
