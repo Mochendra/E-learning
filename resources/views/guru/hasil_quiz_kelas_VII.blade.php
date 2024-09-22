@@ -47,7 +47,7 @@
                     <td>8</td>
                     <td>2</td>
                     <td>80</td>
-                    <td><button class="btn btn-info btn-sm w-100" onclick="showDetails(1)">Lihat Detail</button></td>
+                    <td><a href="/hasil_quiz_detail_kelas_VII" class="btn btn-info btn-sm w-100" onclick="showDetails(1)">Lihat Detail</a></td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
@@ -56,9 +56,12 @@
                     <td>7</td>
                     <td>3</td>
                     <td>70</td>
-                    <td><button class="btn btn-info btn-sm w-100" onclick="showDetails(2)">Lihat Detail</button></td>
+                    <td><a href="/hasil_quiz_detail_kelas_VII" class="btn btn-info btn-sm w-100" onclick="showDetails(2)">Lihat Detail</a></td>
                 </tr>
             </tbody>
+        </table>
+    </div>
+    
         </table>
         
         <!-- Modal to show details of student's answers -->
@@ -77,42 +80,6 @@
             </div>
         </div>
     </div>
-    
-    <script>
-        function showDetails(studentId) {
-            // This is just an example. Normally, you'd fetch this data from your server based on studentId
-            const studentAnswers = {
-                1: [
-                    { question: "Apa warna burung dara?", correctAnswer: "Putih", studentAnswer: "Loreng" },
-                    { question: "Siapa presiden pertama Indonesia?", correctAnswer: "Soekarno", studentAnswer: "Soekarno" },
-                    // Add more questions and answers...
-                ],
-                2: [
-                    { question: "Apa warna burung dara?", correctAnswer: "Putih", studentAnswer: "Putih" },
-                    { question: "Siapa presiden pertama Indonesia?", correctAnswer: "Soekarno", studentAnswer: "Soeharto" },
-                    // Add more questions and answers...
-                ]
-            };
-            
-            const answers = studentAnswers[studentId] || [];
-            let content = '';
-            
-            answers.forEach((answer, index) => {
-                const isCorrect = answer.correctAnswer === answer.studentAnswer;
-                content += `
-                <div>
-                    <p><strong>Soal ${index + 1}:</strong> ${answer.question}</p>
-                    <p><strong>Jawaban Siswa:</strong> ${answer.studentAnswer} ${isCorrect ? '✅' : '❌'}</p>
-                    <p><strong>Jawaban Benar:</strong> ${answer.correctAnswer}</p>
-                    <hr>
-                    </div>
-                    `;
-                });
-                
-                document.getElementById('details-content').innerHTML = content;
-                new bootstrap.Modal(document.getElementById('detailsModal')).show();
-            }
-            </script>
 </div>
 
 </body>

@@ -42,6 +42,12 @@ Route::get('/kelas_VII', function () {
     return view('guru.kelas_VII', ['user' => $user]);
 });
 
+Route::get('/hasil_quiz_detail_kelas_VII', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.hasil_quiz_detail_kelas_VII', ['user' => $user]);
+});
+
 // ===================
 
 Route::get('/materi_kelas_VII', function () {
@@ -202,6 +208,24 @@ Route::get('/kelas_VII_siswa_detail', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
     return view('siswa.kelas_VII_siswa_detail', ['user' => $user]);
+});
+
+Route::get('/kelas_VII_matapelajaran', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VII_matapelajaran', ['user' => $user]);
+});
+
+Route::get('/kelas_VIII_matapelajaran', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VIII_matapelajaran', ['user' => $user]);
+});
+
+Route::get('/kelas_IX_matapelajaran', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_IX_matapelajaran', ['user' => $user]);
 });
 
 Route::get('/kelas_VII_siswa_quiz', function () {
