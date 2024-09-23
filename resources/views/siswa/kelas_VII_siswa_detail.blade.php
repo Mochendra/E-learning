@@ -17,6 +17,16 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <style>
+        /* Responsif untuk layar kecil */
+        @media only screen and (max-width: 768px) {
+            #youtubeVideo {
+                width: 100%; /* Lebar video mengikuti lebar layar */
+                height: 250px; /* Tinggi video sedikit lebih kecil di layar mobile */
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -29,6 +39,21 @@
                     <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
                         additional content. This content is a little bit longer.</p>
                 </div>
+                <!-- Menampilkan Gambar -->
+                <div class="mb-3">
+                    <h6>Gambar:</h6>
+                    <img src="https://via.placeholder.com/600x400" class="img-fluid mb-3" alt="Gambar Materi">
+                </div>
+
+                <!-- Menampilkan Video YouTube -->
+                <!-- Menampilkan Video YouTube yang lebih besar -->
+                <div class="mb-3">
+                    <h6>Video YouTube:</h6>
+                    <iframe id="youtubeVideo" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen></iframe>
+                </div>
+                
                 {{-- <div class="card-footer siswa-detail-footer">
                     <small class="text-body-secondary">Last updated 3 mins ago</small>
                 </div> --}}
@@ -68,6 +93,6 @@
                     Mulai
                 </button>
             </div>
-        </div>        
+        </div>
     </div>
 </body>
