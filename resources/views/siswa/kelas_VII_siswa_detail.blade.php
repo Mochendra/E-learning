@@ -22,14 +22,84 @@
         /* Responsif untuk layar kecil */
         @media only screen and (max-width: 768px) {
             #youtubeVideo {
-                width: 100%; /* Lebar video mengikuti lebar layar */
-                height: 250px; /* Tinggi video sedikit lebih kecil di layar mobile */
+                width: 100%;
+                /* Lebar video mengikuti lebar layar */
+                height: 250px;
+                /* Tinggi video sedikit lebih kecil di layar mobile */
             }
+        }
+
+
+        /* Gaya sidebar chat yang tersembunyi */
+        .chat-box {
+            position: fixed;
+            right: -300px;
+            top: 0;
+            height: 100%;
+            width: 300px;
+            background-color: #f8f9fa;
+            border-left: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            /* Flexbox untuk mengatur posisi */
+            padding: 10px;
+            overflow: hidden;
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+
+        .chat-box.open {
+            right: 0;
+        }
+
+        .chat-messages {
+            flex: 1;
+            /* Membuat pesan tumbuh memenuhi ruang */
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .chat-input {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .chat-toggle {
+            position: fixed;
+            /* Tetap terlihat di layar meskipun digulir */
+            bottom: 10px;
+            /* Berada 20px dari bawah layar */
+            right: 10px;
+            /* Berada 20px dari kanan layar */
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1001;
+            /* Pastikan tombol berada di atas elemen lain */
         }
     </style>
 </head>
 
 <body>
+    <!-- Tombol untuk membuka chat -->
+    <div class="chat-toggle" onclick="toggleChat()">💬</div>
+
+    <!-- Kolom Chat -->
+    <div id="chatBox" class="chat-box">
+        <h5>Forum Chat Diskusi</h5>
+        <div class="chat-messages">
+            <p><strong>Ilham:</strong> Bagaimana tugas ini?</p>
+            <p><strong>Guru:</strong> Silahkan cek materi dulu ya!</p>
+        </div>
+        <!-- Kolom input pesan di bawah -->
+        <div class="chat-input">
+            <input type="text" class="form-control" placeholder="Ketik pesan...">
+            <button class="btn btn-primary mt-2 w-100">Kirim</button>
+        </div>
+    </div>
+
     <div class="container">
         <div class="card-group siswa-detail">
             <div class="card siswa-detail-detail">
@@ -49,11 +119,12 @@
                 <!-- Menampilkan Video YouTube yang lebih besar -->
                 <div class="mb-3">
                     <h6>Video YouTube:</h6>
-                    <iframe id="youtubeVideo" width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    <iframe id="youtubeVideo" width="560" height="315"
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
-                
+
                 {{-- <div class="card-footer siswa-detail-footer">
                     <small class="text-body-secondary">Last updated 3 mins ago</small>
                 </div> --}}
@@ -95,4 +166,10 @@
             </div>
         </div>
     </div>
+    <script>
+        function toggleChat() {
+            const chatBox = document.getElementById('chatBox');
+            chatBox.classList.toggle('open');
+        }
+    </script>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IX</title>
+    <title>VIII</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
@@ -40,14 +40,14 @@
                     <th scope="row">VIII</th>
                     <td>A</td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-primary btn-sm">Pilih</button>
+                        <button type="button" class="btn btn-primary btn-sm w-100">Pilih</button>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">VIII</th>
                     <td>B</td>
                     <td class="text-center">
-                        <button type="button" class="btn btn-primary btn-sm">Pilih</button>
+                        <button type="button" class="btn btn-primary btn-sm w-100">Pilih</button>
                     </td>
                 </tr>
                 <tr>

@@ -8,6 +8,79 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <style>
+          /* Gaya sidebar chat yang tersembunyi */
+          .chat-box {
+            position: fixed;
+            right: -300px;
+            top: 0;
+            height: 100%;
+            width: 300px;
+            background-color: #f8f9fa;
+            border-left: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            /* Flexbox untuk mengatur posisi */
+            padding: 10px;
+            overflow: hidden;
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+
+        .chat-box.open {
+            right: 0;
+        }
+
+        .chat-messages {
+            flex: 1;
+            /* Membuat pesan tumbuh memenuhi ruang */
+            overflow-y: auto;
+            margin-bottom: 10px;
+        }
+
+        .chat-input {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .chat-toggle {
+            position: fixed;
+            /* Tetap terlihat di layar meskipun digulir */
+            bottom: 10px;
+            /* Berada 20px dari bawah layar */
+            right: 10px;
+            /* Berada 20px dari kanan layar */
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 1001;
+            /* Pastikan tombol berada di atas elemen lain */
+        }
+
+        @media (max-width: 768px) {
+            /* Responsive adjustments */
+            .chat-box {
+                width: 100%;
+                right: -100%;
+            }
+
+            .chat-box.open {
+                right: 0;
+            }
+
+            .navbar-brand img {
+                width: 30px;
+                height: 35px;
+            }
+
+            .table {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -26,8 +99,26 @@
             </div>
         </div>
     </nav>
+       <!-- Tombol untuk membuka chat -->
+       <div class="chat-toggle" onclick="toggleChat()">💬</div>
+
+       <!-- Kolom Chat -->
+       <div id="chatBox" class="chat-box">
+           <h5>Forum Chat Diskusi</h5>
+           <div class="chat-messages">
+               <p><strong>Ilham:</strong> Bagaimana tugas ini?</p>
+               <p><strong>Guru:</strong> Silahkan cek materi dulu ya!</p>
+           </div>
+           <!-- Kolom input pesan di bawah -->
+           <div class="chat-input">
+               <input type="text" class="form-control" placeholder="Ketik pesan...">
+               <button class="btn btn-primary mt-2 w-100">Kirim</button>
+           </div>
+       </div>
+  
     <div class="container mt-5">
         <h2 class="judul_dashboard text-center">Materi Kelas VII</h2>
+        <div class="table-responsive">
         <table class="table table-bordered">
             <thead>
                 <tr class="Huruf_Angka">
@@ -86,7 +177,14 @@
             </tbody>
             
         </table>
+        </div>
     </div>
+    <script>
+        function toggleChat() {
+            const chatBox = document.getElementById('chatBox');
+            chatBox.classList.toggle('open');
+        }
+    </script>
 </body>
 
 </html>
