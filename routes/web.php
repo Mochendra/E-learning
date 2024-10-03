@@ -210,6 +210,30 @@ Route::get('/kelas_VII_siswa_detail', function () {
     return view('siswa.kelas_VII_siswa_detail', ['user' => $user]);
 });
 
+Route::get('/kelas_VII_siswa_jenis', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VII_siswa_jenis', ['user' => $user]);
+});
+
+Route::get('/kelas_VII_siswa_detail_materi', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VII_siswa_detail_materi', ['user' => $user]);
+});
+
+Route::get('/kelas_VII_siswa_detail_tugas', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VII_siswa_detail_tugas', ['user' => $user]);
+});
+
+Route::get('/kelas_VII_siswa_detail_quiz', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VII_siswa_detail_quiz', ['user' => $user]);
+});
+
 Route::get('/kelas_VII_matapelajaran', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
@@ -264,8 +288,58 @@ Route::get('/kelas_VIII_siswa', function () {
     return view('siswa.kelas_VIII_siswa', ['user' => $user]);
 });
 
+Route::get('/kelas_VIII_siswa_jenis', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VIII_siswa_jenis', ['user' => $user]);
+});
+
+Route::get('/kelas_VIII_siswa_detail_materi', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VIII_siswa_detail_materi', ['user' => $user]);
+});
+
+Route::get('/kelas_VIII_siswa_detail_tugas', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VIII_siswa_detail_tugas', ['user' => $user]);
+});
+
+Route::get('/kelas_VIII_siswa_detail_quiz', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_VIII_siswa_detail_quiz', ['user' => $user]);
+});
+
 Route::get('/kelas_IX_siswa', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
     return view('siswa.kelas_IX_siswa', ['user' => $user]);
 });
+
+
+Route::get('/kelas_IX_siswa_jenis', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_IX_siswa_jenis', ['user' => $user]);
+});
+
+Route::get('/kelas_IX_siswa_detail_materi', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_IX_siswa_detail_materi', ['user' => $user]);
+});
+
+Route::get('/kelas_IX_siswa_detail_tugas', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_IX_siswa_detail_tugas', ['user' => $user]);
+});
+
+Route::get('/kelas_IX_siswa_detail_quiz', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('siswa.kelas_IX_siswa_detail_quiz', ['user' => $user]);
+});
+

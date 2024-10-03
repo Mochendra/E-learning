@@ -17,23 +17,9 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
 
 <body>
     <div class="container">
-        <div class="card-group siswa-detail">
-            <div class="card siswa-detail-detail">
-                {{-- <img src="..." class="card-img-top" alt="..."> --}}
-                <div class="card-body siswa-detail-detail">
-                    <h5 class="card-title">Materi</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                        additional content. This content is a little bit longer.</p>
-                </div>
-                {{-- <div class="card-footer siswa-detail-footer">
-                    <small class="text-body-secondary">Last updated 3 mins ago</small>
-                </div> --}}
-            </div>
-        </div>
         <div class="card-group siswa-detail">
             <div class="card siswa-detail-detail">
                 {{-- <img src="..." class="card-img-top" alt="..."> --}}
@@ -51,7 +37,7 @@
                     </div>
                     <div class="d-grid gap-2 col-6 mx-auto">
                         <button class="btn btn-primary" type="button"
-                            style="width: 60%; margin-top: 20px; margin-bottom:20px;">Button</button>
+                            style="width: 60%; margin-top: 20px; margin-bottom:20px;">Kirim</button>
                     </div>
                 </div>
                 <div class="card-footer siswa-detail-footer">
@@ -59,15 +45,5 @@
                 </div>
             </div>
         </div>
-        <div class="card-group siswa-detail">
-            <div class="card siswa-detail-detail">
-                <h5 class="card-title">Quiz</h5>
-                <p class="card-text">Klik untuk memulai quiz</p>
-                <button class="btn btn-primary" type="button" style="width: 30%; margin-bottom:20px;"
-                    onclick="window.location.href='/kelas_IX_siswa_quiz';">
-                    Mulai
-                </button>
-            </div>
-        </div>        
     </div>
 </body>
