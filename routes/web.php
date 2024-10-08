@@ -23,6 +23,13 @@ Route::get('/login', function () {
     $user = Auth::user();
     return view('login', ['user' => $user]);
 });
+
+Route::get('/dashboard_admin', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('admin.dashboard_admin', ['user' => $user]);
+});
+
 // GURU
 Route::get('/dashboard_guru', function () {
     // Mengirim data ke tampilan Blade

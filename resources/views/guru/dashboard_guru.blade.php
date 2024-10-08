@@ -43,9 +43,25 @@
         </div>
     </nav>
 
+    <div class="d-flex justify-content-between align-items-center w-100" style="padding-left: 10%; padding-right : 10%">
+        <!-- Jadwal Siswa di sebelah kiri ujung -->
+        <p class="judul_dashboard mb-3">Jadwal Guru</p>
+    
+        <!-- Informasi Akademik di sebelah kanan ujung -->
+        <div class="card-body text-end" style="margin-top: 10px;">
+            <p>Semester: Ganjil</p>
+            <p>Tahun Ajaran: 2024/2025</p>
+        </div>
+    </div>
+    
+
     <div class="container mt-5">
         <div class="d-flex align-items-center justify-content-between flex-wrap">
-            <p class="judul_dashboard mb-3">Jadwal Mengajar</p>
+            <div class="nomor_nama">
+                <p>Anda Login sebagai</p>
+                <p class="nama_siswa">Catur Mahendra</p>
+            </div>
+            
             <div class="btn-group">
                 <!-- Dropdown for selecting a teacher -->
                 <select class="form-select form-select-sm me-2" id="guruDropdown">

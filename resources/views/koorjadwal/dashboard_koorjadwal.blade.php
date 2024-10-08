@@ -18,6 +18,14 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+    <style>
+        /* Tambahkan ini di file CSS Anda */
+        .short-select {
+            width: 100px;
+            /* Atur lebar sesuai kebutuhan */
+        }
+    </style>
 </head>
 
 <body class="Backgound-dashboard-guru">
@@ -44,6 +52,24 @@
             </div>
         </div>
     </nav>
+
+    <div class="d-flex justify-content-between align-items-center w-100"
+        style="padding-left: 10%; padding-right: 10%; padding-top: 10px;">
+        <!-- Informasi Akademik di sebelah kanan ujung -->
+        <div class="card-body">
+            <label for="semester" class="form-label">Semester</label>
+            <select class="form-select short-select" id="semester" name="semester">
+                <option value="ganjil">Ganjil</option>
+                <option value="genap">Genap</option>
+            </select>
+            <p class="mt-2">Tahun Ajaran: 2024/2025</p>
+            <p class="nama_guru">Anda Login sebagai: Catur Mahendra</p>
+        </div>
+    </div>
+
+
+
+
     <div class="container mt-5">
         <div class="d-flex align-items-center justify-content-between flex-wrap mb-4">
             <p class="judul_dashboard mb-3">Jadwal Mengajar</p>
@@ -145,11 +171,22 @@
                         </div>
                         <div class="mb-3">
                             <label for="hari" class="form-label">Hari</label>
-                            <input type="text" class="form-control" id="hari" name="hari">
+                            <select class="form-select" id="hari" name="hari">
+                                <option value="">Pilih Hari</option>
+                                <option value="Senin">Senin</option>
+                                <option value="Selasa">Selasa</option>
+                                <option value="Rabu">Rabu</option>
+                                <option value="Kamis">Kamis</option>
+                                <option value="Jumat">Jumat</option>
+                                <option value="Sabtu">Sabtu</option>
+                                <option value="Minggu">Minggu</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label for="jam" class="form-label">Jam</label>
-                            <input type="text" class="form-control" id="jam" name="jam">
+                            <input type="text" id="jam" name="jam" class="form-control"
+                                placeholder="Contoh: 07:00" pattern="([01][0-9]|2[0-3]):[0-5][0-9]" required>
+                            <small class="form-text text-muted">Format: Jam:Menit (24 jam).</small>
                         </div>
                         <button type="submit" class="btn btn-primary">Tambah Jadwal</button>
                     </form>

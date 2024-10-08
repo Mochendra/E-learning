@@ -42,14 +42,27 @@
             </div>
         </div>
     </nav>
+    <div class="d-flex justify-content-between align-items-center w-100" style="padding-left: 10%; padding-right : 10%">
+        <!-- Jadwal Siswa di sebelah kiri ujung -->
+        <p class="judul_dashboard mb-3">Jadwal Siswa</p>
+    
+        <!-- Informasi Akademik di sebelah kanan ujung -->
+        <div class="card-body text-end" style="margin-top: 10px;">
+            <p>Semester: Ganjil</p>
+            <p>Tahun Ajaran: 2024/2025</p>
+        </div>
+    </div>
+    
+    
 
     <div class="container mt-5">
         <div class="d-flex align-items-center justify-content-between flex-wrap">
-            <p class="judul_dashboard mb-3">Jadwal Siswa</p>
             <div class="nomor_nama">
+                <p>Anda Login sebagai</p>
                 <p class="nomor_induk">1462100176</p>
                 <p class="nama_siswa">Moch. Hendra Admaja</p>
             </div>
+            
 
             <div class="btn-group">
 
