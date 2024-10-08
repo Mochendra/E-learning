@@ -30,6 +30,20 @@ Route::get('/dashboard_admin', function () {
     return view('admin.dashboard_admin', ['user' => $user]);
 });
 
+// KOOR----------------------------------------------------------------------------------
+
+Route::get('/dashboard_koorjadwal', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('koorjadwal.dashboard_koorjadwal', ['user' => $user]);
+});
+
+Route::get('/dashboard_koorjadwal_siswa', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('koorjadwal.dashboard_koorjadwal_siswa', ['user' => $user]);
+});
+
 // GURU
 Route::get('/dashboard_guru', function () {
     // Mengirim data ke tampilan Blade
@@ -189,13 +203,6 @@ Route::get('/kelas_IX_siswa', function () {
     return view('guru.kelas_IX_siswa', ['user' => $user]);
 });
 
-// KOOR----------------------------------------------------------------------------------
-
-Route::get('/dashboard_koorjadwal', function () {
-    // Mengirim data ke tampilan Blade
-    $user = Auth::user();
-    return view('koorjadwal.dashboard_koorjadwal', ['user' => $user]);
-});
 
 // SISWA---------------------------------------------------------------------------------
 

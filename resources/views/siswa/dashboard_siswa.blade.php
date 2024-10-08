@@ -64,20 +64,50 @@
             </div>
             
 
-            <div class="btn-group">
-
+            <div class="btn-group mb-3">
                 <!-- Dropdown for selecting a class -->
                 <select class="form-select form-select-sm me-2" id="kelasDropdown">
                     <option value="">Pilih Kelas</option>
-                    <option value="7A">7 A</option>
-                    <option value="7B">7 B</option>
-                    <option value="7C">7 C</option>
-                    <option value="7D">7 D</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
                 </select>
-
+            
+                <!-- Dropdown for selecting a code class -->
+                <select class="form-select form-select-sm me-2" id="kodeKelas">
+                    <option value="">Pilih Kode Kelas</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                    <option value="I">I</option>
+                    <option value="J">J</option>
+                    <option value="K">K</option>
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                    <option value="N">N</option>
+                    <option value="O">O</option>
+                    <option value="P">P</option>
+                    <option value="Q">Q</option>
+                    <option value="R">R</option>
+                    <option value="S">S</option>
+                    <option value="T">T</option>
+                    <option value="U">U</option>
+                    <option value="V">V</option>
+                    <option value="W">W</option>
+                    <option value="X">X</option>
+                    <option value="Y">Y</option>
+                    <option value="Z">Z</option>
+                </select>
+            
                 <!-- Search Button -->
                 <button class="btn btn-outline-success btn-sm" type="button" onclick="filterData()">Search</button>
             </div>
+            
         </div>
 
         <table class="table table-bordered mt-4">
@@ -89,6 +119,7 @@
                     <th scope="col">Guru</th>
                     <th scope="col">Mata Pelajaran</th>
                     <th scope="col">Kelas</th>
+                    <th scope="col">Kode Kelas</th>
                 </tr>
             </thead>
             <tbody>
@@ -98,7 +129,8 @@
                     <td>07 : 00</td>
                     <td>Ahmad</td>
                     <td>Seni Budaya</td>
-                    <td>7F</td>
+                    <td>7</td>
+                    <td>F</td>
                 </tr>
                 <tr>
                     <th scope="row">2</th>
@@ -106,7 +138,8 @@
                     <td>09 : 00</td>
                     <td>Habib</td>
                     <td>Kimia</td>
-                    <td>7H</td>
+                    <td>7</td>
+                    <td>H</td>
                 </tr>
                 <tr>
                     <th scope="row">3</th>
@@ -114,7 +147,8 @@
                     <td>12 : 00</td>
                     <td>Rizky</td>
                     <td>Matematika</td>
-                    <td>9A</td>
+                    <td>9</td>
+                    <td>A</td>
                 </tr>
             </tbody>
         </table>
