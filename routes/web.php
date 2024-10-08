@@ -38,10 +38,10 @@ Route::get('/dashboard_koorjadwal', function () {
     return view('koorjadwal.dashboard_koorjadwal', ['user' => $user]);
 });
 
-Route::get('/dashboard_koorjadwal_siswa', function () {
+Route::get('/koorjadwal_siswa', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
-    return view('koorjadwal.dashboard_koorjadwal_siswa', ['user' => $user]);
+    return view('koorjadwal.koorjadwal_siswa', ['user' => $user]);
 });
 
 // GURU
