@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,14 +19,42 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    // Mengirim data ke tampilan Blade
-    $user = Auth::user();
-    return view('login', ['user' => $user]);
+// Rute untuk form login
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
+
+// Rute untuk menghandle login
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+// Rute untuk logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+
+Route::group(['middleware' => ['auth', 'role:admin']], function () {
+    // Rute untuk admin
+    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 });
 
+Route::group(['middleware' => ['auth', 'role:koorjadwal']], function () {
+    // Rute untuk koorjadwal
+    Route::get('/koorjadwal/dashboard', [KoorjadwalController::class, 'index'])->name('koorjadwal.dashboard');
+});
+
+Route::group(['middleware' => ['auth', 'role:admin']], function () {
+    // Rute untuk admin
+});
+
+Route::group(['middleware' => ['auth', 'role:koorjadwal']], function () {
+    // Rute untuk koorjadwal
+});
+
+
+//=============================================================================
+//-----------------------------------------------------------------------------
+
+
 Route::get('/dashboard_admin', function () {
-    // Mengirim data ke tampilan Blade
+    // Mengirim data    ke tampilan Blade
     $user = Auth::user();
     return view('admin.dashboard_admin', ['user' => $user]);
 });

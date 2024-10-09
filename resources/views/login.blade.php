@@ -18,15 +18,17 @@
                 <div class="mb-3">
                     <label class="form-label">Selamat datang</label>
                     <p class="italic-text">Isi untuk login.</p>
-                    <input type="text" class="form-control" placeholder="Masukkan nama" aria-label="Username"
-                        aria-describedby="basic-addon1">
+                    <form action="{{ route('login') }}" method="POST">
+                        @csrf
+                        <input type="text" name="nomor_induk" class="form-control" placeholder="Masukkan nomor induk" aria-label="Username" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="mb-3">
-                    <input type="text" class="form-control" placeholder="Masukkan kata sandi" aria-label="Password"
-                        aria-describedby="basic-addon1">
+                    <input type="password" name="password" class="form-control" placeholder="Masukkan kata sandi" aria-label="Password" aria-describedby="basic-addon1" required>
+                </div>
+                <button type="submit" class="btn btn-success" style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1rem; margin-bottom:40px;">Masuk</button>
+                    </form>
                 </div>
             </div>
-            <button type="button" class="btn btn-success" style="--bs-btn-padding-y: .4rem; --bs-btn-padding-x: 5rem; --bs-btn-font-size: 1rem; margin-bottom:40px;">Masuk</button>
         </div>
     </div>
 </body>

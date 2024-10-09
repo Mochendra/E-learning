@@ -20,10 +20,8 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <style>
-        /* Tambahkan ini di file CSS Anda */
         .short-select {
             width: 100px;
-            /* Atur lebar sesuai kebutuhan */
         }
     </style>
 </head>
@@ -45,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="/dashboard_koorjadwal_siswa">Tambah Kelas Siswa</a> <!-- Menggunakan kelas text-white -->
+                        <a class="nav-link active text-white" aria-current="page" href="/koorjadwal_siswa">Tambah Kelas Siswa</a> <!-- Menggunakan kelas text-white -->
                     </li>
                 </ul>
             </div>
@@ -227,5 +225,4 @@
 </div>
     
 </body>
-
 </html>
