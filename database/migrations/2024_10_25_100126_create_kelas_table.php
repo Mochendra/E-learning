@@ -4,20 +4,30 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateKelasTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('kelas', function (Blueprint $table) {
-            $table->id();
-            $table->integer('level')->comment('7, 8, 9');
-            $table->string('kode_kelas')->comment('A, B, C...');
+            $table->bigIncrements('id');
+            $table->enum('tingkat', ['7', '8', '9']);
+            $table->string('kode_kelas', 5)->nullable();
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('kelas');
     }
-};
+}

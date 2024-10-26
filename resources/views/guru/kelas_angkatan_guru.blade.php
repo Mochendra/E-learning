@@ -23,7 +23,7 @@
                 <img src="{{ asset('illustrations/logo.png') }}" alt="Logo"
                     style="width: 40px; height: 45px; margin-right: 10px;">
             </a>
-            <a class="navbar-brand text-white" href="#">Dashboard Guru</a>
+            <a class="navbar-brand text-white" href="#">Halaman Memilih Kelas</a>
             <!-- Menggunakan kelas text-white untuk teks putih -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -32,37 +32,42 @@
         </div>
     </nav>
     <div class="container mt-5">
-        <h6 class="Judul_kelas_utama text-center">Pilih Kelas</h6>
-        <div class="d-flex justify-content-center flex-wrap">
-            <div class="card m-2" style="width: 18rem;">
-                <img src="https://asset.kompas.com/crops/C5PHJsnWLdKInOdy00tZ6I-yF1g=/0x0:4500x3000/750x500/data/photo/2022/10/11/6344ce530d5fb.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Kelas VII</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="/kelas_VII" class="btn btn-primary">Pilih Kelas</a>
-                </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <a href="/kelas_VII" style="text-decoration: none; color: inherit;">
+                    <div class="card text-center mb-3" style="height: 250px; cursor: pointer;">
+                        <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
+                            <h5 class="card-title">Kelas VII</h5>
+                            <div class="card-footer bg-transparent border-success" style="margin-top: auto;">
+                                <span>Some quick example text to build on the card title and make up the bulk of the card's content.</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="card m-2" style="width: 18rem;">
-                <img src="https://asset.kompas.com/crops/C5PHJsnWLdKInOdy00tZ6I-yF1g=/0x0:4500x3000/750x500/data/photo/2022/10/11/6344ce530d5fb.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Kelas VIII</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="/kelas_VIII" class="btn btn-primary">Pilih Kelas</a>
-                </div>
+            <div class="col-md-4">
+                <a href="/kelas_VIII" style="text-decoration: none; color: inherit;">
+                    <div class="card text-center mb-3" style="height: 250px; cursor: pointer;">
+                        <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
+                            <h5 class="card-title">Kelas VIII</h5>
+                            <div class="card-footer bg-transparent border-success" style="margin-top: auto;">
+                                <span>Some quick example text to build on the card title and make up the bulk of the card's content.</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="card m-2" style="width: 18rem;">
-                <img src="https://asset.kompas.com/crops/C5PHJsnWLdKInOdy00tZ6I-yF1g=/0x0:4500x3000/750x500/data/photo/2022/10/11/6344ce530d5fb.jpg"
-                    class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Kelas IX</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="/kelas_IX" class="btn btn-primary">Pilih Kelas</a>
-                </div>
+            <div class="col-md-4">
+                <a href="/kelas_IX" style="text-decoration: none; color: inherit;">
+                    <div class="card text-center mb-3" style="height: 250px; cursor: pointer;">
+                        <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
+                            <h5 class="card-title">Kelas IX</h5>
+                            <div class="card-footer bg-transparent border-success" style="margin-top: auto;">
+                                <span>Some quick example text to build on the card title and make up the bulk of the card's content.</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             </div>
         </div>
     </div>

@@ -3,6 +3,11 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DashboardController;
+
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,49 +20,59 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 
+
+// mulai --------------------
+Route::get('/login', function () {
+    return view('auth.login'); //menampilkan view
+})->name('login.form');
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register.form'); //menampilkan register (view)
+Route::post('/register', [RegisterController::class, 'register'])->name('register'); //submit 
+
+
+Route::match(['get', 'post'], '/dashboard_admin/user/store', [UserController::class, 'store'])->name('admin.user.store');
+Route::get('/dashboard_admin', [AdminController::class, 'index'])->name('dashboard_admin');
+
+
+
+
+//selesai ------------------
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-// Rute untuk form login
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.form');
+// Route::group(['middleware' => ['auth', 'role:admin']], function () {
+//     // Rute untuk admin
+//     Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+// });
 
-// Rute untuk menghandle login
-Route::post('/login', [LoginController::class, 'login'])->name('login');
+// Route::group(['middleware' => ['auth', 'role:koorjadwal']], function () {
+//     // Rute untuk koorjadwal
+//     Route::get('/koorjadwal/dashboard', [KoorjadwalController::class, 'index'])->name('koorjadwal.dashboard');
+// });
 
-// Rute untuk logout
-Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+// Route::group(['middleware' => ['auth', 'role:admin']], function () {
+//     // Rute untuk admin
+// });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
+// Route::group(['middleware' => ['auth', 'role:koorjadwal']], function () {
+//     // Rute untuk koorjadwal
+// });
 
-Route::group(['middleware' => ['auth', 'role:admin']], function () {
-    // Rute untuk admin
-    Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
-});
-
-Route::group(['middleware' => ['auth', 'role:koorjadwal']], function () {
-    // Rute untuk koorjadwal
-    Route::get('/koorjadwal/dashboard', [KoorjadwalController::class, 'index'])->name('koorjadwal.dashboard');
-});
-
-Route::group(['middleware' => ['auth', 'role:admin']], function () {
-    // Rute untuk admin
-});
-
-Route::group(['middleware' => ['auth', 'role:koorjadwal']], function () {
-    // Rute untuk koorjadwal
-});
 
 
 //=============================================================================
 //-----------------------------------------------------------------------------
 
 
-Route::get('/dashboard_admin', function () {
-    // Mengirim data    ke tampilan Blade
-    $user = Auth::user();
-    return view('admin.dashboard_admin', ['user' => $user]);
-});
+// Route::get('/dashboard_admin', function () {
+//     // Mengirim data    ke tampilan Blade
+//     $user = Auth::user();
+//     return view('admin.dashboard_admin', ['user' => $user]);
+// });
 
 // KOOR----------------------------------------------------------------------------------
 
@@ -73,7 +88,32 @@ Route::get('/koorjadwal_siswa', function () {
     return view('koorjadwal.koorjadwal_siswa', ['user' => $user]);
 });
 
+Route::get('/koorjadwal_tambah_mata_pelajaran', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('koorjadwal.koorjadwal_tambah_pelajaran', ['user' => $user]);
+});
+
+Route::get('/koorjadwal_tambah_tahun_ajar', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('koorjadwal.koorjadwal_tambah_tahun_ajar', ['user' => $user]);
+});
+
+Route::get('/koorjadwal_tambah_kelas', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('koorjadwal.koorjadwal_tambah_kelas', ['user' => $user]);
+});
+
 // GURU
+
+Route::get('/rekap_nilai', function () {
+    // Mengirim data ke tampilan Blade
+    $user = Auth::user();
+    return view('guru.rekap_nilai', ['user' => $user]);
+});
+
 Route::get('/dashboard_guru', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
@@ -171,7 +211,7 @@ Route::get('/hasil_tugas_kelas_VIII', function () {
 Route::get('/hasil_quiz_kelas_VIII', function () {
     // Mengirim data ke tampilan Blade
     $user = Auth::user();
-    return view('guru.hasil_tugas_quiz_VIII', ['user' => $user]);
+    return view('guru.hasil_quiz_kelas_VIII', ['user' => $user]);
 });
 
 // =======================

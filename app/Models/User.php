@@ -21,6 +21,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'no_whatsapp',
+        'role',
+        'nomor_induk',
+        'status',
     ];
 
     /**
@@ -42,4 +46,22 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    // Relasi Many-to-Many dengan Kelas
+    public function kelas()
+    {
+        return $this->belongsToMany(Kelas::class, 'siswa_kelas');
+    }
+
+    // Relasi One-to-Many dengan JawabanQuiz
+    public function jawabanQuiz()
+    {
+        return $this->hasMany(JawabanQuiz::class);
+    }
+
+    // Relasi One-to-Many dengan Tugas
+    public function tugas()
+    {
+        return $this->hasMany(Tugas::class, 'siswa_id');
+    }
 }

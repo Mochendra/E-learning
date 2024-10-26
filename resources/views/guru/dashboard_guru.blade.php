@@ -17,6 +17,15 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <style>
+        .table-bordered th, .table-bordered td {
+            border-color: #a3c1e0; /* Warna biru muda pastel */
+        }
+        .Background-dashboard-guru {
+            background-color: #f8f9fa; /* Warna latar belakang yang lembut */
+        }
+    </style>
+    
 </head>
 
 <body class="Background-dashboard-guru">
@@ -33,13 +42,16 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="/kelas_angkatan_guru">Pilih
-                            Kelas Mengajar</a>
+                        <a class="nav-link active text-white" aria-current="page" href="/rekap_nilai">Rekap Nilai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="/kelas_angkatan_guru">Kelas Mengajar</a>
                     </li>
                 </ul>
             </div>
+            
         </div>
     </nav>
 
@@ -95,8 +107,8 @@
             </div>
         </div>
 
-        <table class="table table-bordered mt-4">
-            <thead>
+        <table class="table table-striped table-bordered rounded-table mt-4">
+            <thead class="table-dark">
                 <tr>
                     <th scope="col">No.</th>
                     <th scope="col">Hari</th>
@@ -110,7 +122,7 @@
                 <tr>
                     <th scope="row">1</th>
                     <td>Senin</td>
-                    <td>07 : 00</td>
+                    <td>07:00</td>
                     <td>Ahmad</td>
                     <td>Seni Budaya</td>
                     <td>7F</td>
@@ -118,7 +130,7 @@
                 <tr>
                     <th scope="row">2</th>
                     <td>Rabu</td>
-                    <td>09 : 00</td>
+                    <td>09:00</td>
                     <td>Habib</td>
                     <td>Kimia</td>
                     <td>7H</td>
@@ -126,7 +138,7 @@
                 <tr>
                     <th scope="row">3</th>
                     <td>Jumat</td>
-                    <td>12 : 00</td>
+                    <td>12:00</td>
                     <td>Rizky</td>
                     <td>Matematika</td>
                     <td>9A</td>
@@ -137,3 +149,8 @@
 </body>
 
 </html>
+{{-- navbar pindah ke kanan --}}
+
+{{-- tambahkan navbar rekap nilai --}}
+
+{{-- berisi nama, nilai akhir (rata2), detail, tombol kirim wa --}}

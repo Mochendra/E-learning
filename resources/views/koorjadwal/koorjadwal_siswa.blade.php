@@ -1,41 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.layout_koorjadwal')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pengelompokan Kelas Siswa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-</head>
+@section('title', 'Tambah Siswa')
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('illustrations/logo.png') }}" alt="Logo"
-                    style="width: 40px; height: 45px; margin-right: 10px;">
-            </a>
-            <a class="navbar-brand text-white" href="#">Dashboard Koordinator Jadwal</a>
-            <!-- Menggunakan kelas text-white untuk teks putih -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="/dashboard_koorjadwal_siswa">Tambah Kelas Siswa</a> <!-- Menggunakan kelas text-white -->
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
+@section('content')
     <div class="container mt-4">
         <h2 class="text-center" style="margin-bottom: 20px;">Pengelompokan Kelas Siswa</h2>
 
@@ -53,15 +20,14 @@
             </div>
         </div>
 
-        <table class="table table-bordered">
-            <thead>
+        <table class="table table-striped table-bordered rounded-table mt-4">
+            <thead class="table-dark">
                 <tr>
                     <th scope="col"><input type="checkbox" id="selectAll" onclick="toggleSelectAll(this)"></th>
                     <th scope="col">No.</th>
                     <th scope="col">Nomor Induk</th>
                     <th scope="col">Nama Siswa</th>
                     <th scope="col">Kelas</th>
-                    <th scope="col">Kode Kelas</th>
                 </tr>
             </thead>
             <tbody id="siswaTableBody">
@@ -71,14 +37,12 @@
                     <td>12345</td>
                     <td>Ahmad</td>
                     <td>-</td>
-                    <td>-</td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="studentCheckbox" value="Habib"></td>
                     <td>2</td>
                     <td>12346</td>
                     <td>Habib</td>
-                    <td>-</td>
                     <td>-</td>
                 </tr>
                 <tr>
@@ -87,14 +51,12 @@
                     <td>12347</td>
                     <td>Rizky</td>
                     <td>-</td>
-                    <td>-</td>
                 </tr>
                 <tr>
                     <td><input type="checkbox" class="studentCheckbox" value="Bima"></td>
                     <td>4</td>
                     <td>12348</td>
                     <td>Bima</td>
-                    <td>-</td>
                     <td>-</td>
                 </tr>
             </tbody>
@@ -201,6 +163,4 @@
             modal.hide();
         });
     </script>
-</body>
-
-</html>
+@endsection

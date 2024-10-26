@@ -1,66 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.layout_koorjadwal')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard Koordinator Jadwal</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+@section('title', 'Tambah Siswa')
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Russo+One&display=swap"
-        rel="stylesheet">
+@section('content')
+<style>
+    .table-bordered th, .table-bordered td {
+        border-color: #a3c1e0; /* Warna biru muda pastel */
+    }
+</style>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-    <style>
-        .short-select {
-            width: 100px;
-        }
-    </style>
-</head>
-
-<body class="Backgound-dashboard-guru">
-    <nav class="navbar navbar-expand-lg navbar-custom">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('illustrations/logo.png') }}" alt="Logo"
-                    style="width: 40px; height: 45px; margin-right: 10px;">
-            </a>
-            <a class="navbar-brand text-white" href="#">Dashboard Koordinator Jadwal</a>
-            <!-- Menggunakan kelas text-white untuk teks putih -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="/koorjadwal_siswa">Tambah Kelas Siswa</a> <!-- Menggunakan kelas text-white -->
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="d-flex justify-content-between align-items-center w-100"
-        style="padding-left: 10%; padding-right: 10%; padding-top: 10px;">
+    <div class="d-flex"
+        style="padding-right: 10%; padding-top: 10px;">
         <!-- Informasi Akademik di sebelah kanan ujung -->
         <div class="card-body">
             <label for="semester" class="form-label">Semester</label>
-            <select class="form-select short-select" id="semester" name="semester">
+            <select class="form-select short-select" id="semester" name="semester" style="width: 100px;">
                 <option value="ganjil">Ganjil</option>
                 <option value="genap">Genap</option>
             </select>
-            <p class="mt-2">Tahun Ajaran: 2024/2025</p>
-            <p class="nama_guru">Anda Login sebagai: Catur Mahendra</p>
+            <label for="tahun_ajar" class="form-label">Tahun Ajar</label>
+            <select class="form-select" id="tahun_ajar" name="tahun_ajar" style="width: 130px;">
+                <option value="2024-2025">2024-2025</option>
+                <option value="2025-2026">2025-2026</option>
+            </select>
+            {{-- pindah ke samping search --}}
+            
+            <p class="nama_guru">Anda Login sebagai: Hendra</p>
         </div>
     </div>
 
@@ -74,8 +39,8 @@
         </div>
 
         <!-- Table displaying the schedule -->
-        <table class="table table-bordered">
-            <thead>
+        <table class="table table-striped table-bordered rounded-table mt-4">
+            <thead class="table-dark">
                 <tr>
                     <th scope="col">No.</th>
                     <th scope="col">Hari</th>
@@ -83,7 +48,7 @@
                     <th scope="col">Guru</th>
                     <th scope="col">Mata Pelajaran</th>
                     <th scope="col">Kelas</th>
-                    <th scope="col">Kode kelas</th>
+                    {{-- <th scope="col">Kode kelas</th> --}}
                 </tr>
             </thead>
             <tbody>
@@ -94,8 +59,8 @@
                     <td class="jam">09 : 00</td>
                     <td>Ahmad</td>
                     <td>Seni Budaya</td>
-                    <td>7</td>
-                    <td>F</td>
+                    <td>7 A</td>
+                    {{-- <td>F</td> --}}
                 </tr>
                 <tr>
                     <th scope="row">2</th>
@@ -104,8 +69,8 @@
                     <td class="jam">10 : 00</td>
                     <td>Habib</td>
                     <td>Kimia</td>
-                    <td>7</td>
-                    <td>H</td>
+                    <td>7 B</td>
+                    {{-- <td>H</td> --}}
                 </tr>
                 <tr>
                     <th scope="row">3</th>
@@ -114,8 +79,8 @@
                     <td class="jam">13 : 00</td>
                     <td>Rizky</td>
                     <td>Matematika</td>
-                    <td>9</td>
-                    <td>A</td>
+                    <td>9 C</td>
+                    {{-- <td>A</td> --}}
                 </tr>
             </tbody>        
         </table>        
@@ -217,12 +182,26 @@
                             placeholder="Contoh: 09:00" pattern="([01][0-9]|2[0-3]):[0-5][0-9]" required>
                         <small class="form-text text-muted">Format: Jam:Menit (24 jam).</small>
                     </div>
+                    <div class="mb-3">
+                        <label for="hari" class="form-label">Semester</label>
+                        <select class="form-select" id="hari" name="hari">
+                            <option value="Semester">Genap</option>
+                            <option value="Semester">Ganjil</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="hari" class="form-label">Tahun Ajar</label>
+                        <select class="form-select" id="hari" name="hari">
+                            <option value="Tahun">2024-2025</option>
+                            <option value="Tahun">2025-2026</option>
+                        </select>
+                    </div>
                     <button type="submit" class="btn btn-primary">Tambah Jadwal</button>
+                    {{-- bagi dua --}}
                 </form>
             </div>
         </div>
     </div>
 </div>
     
-</body>
-</html>
+@endsection

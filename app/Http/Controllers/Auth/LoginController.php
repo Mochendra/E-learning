@@ -21,22 +21,21 @@ class LoginController extends Controller
      */
     public function login(Request $request)
     {
-        // Validasi input
         $request->validate([
             'nomor_induk' => 'required|string',
             'password' => 'required|string',
         ]);
 
-        // Mencoba login
+        // Cek kredensial
         if (Auth::attempt(['nomor_induk' => $request->nomor_induk, 'password' => $request->password])) {
-            // Jika login berhasil, redirect ke halaman yang diinginkan
-            return redirect()->intended('/dashboard'); // Ganti dengan rute dashboard Anda
+            // Jika berhasil, redirect ke dashboard
+            return redirect()->intended('/dashboard_siswa'); // Ganti '/dashboard' sesuai dengan rute dashboard Anda
         }
 
-        // Jika login gagal, kembali ke form login dengan pesan error
-        return redirect()->back()->withErrors([
-            'nomor_induk' => 'Nomor induk atau kata sandi salah.',
-        ])->withInput($request->only('nomor_induk'));
+        // Jika gagal, kembali dengan pesan error
+        return back()->withErrors([
+            'nomor_induk' => 'Nomor Induk atau Password salah.',
+        ])->onlyInput('nomor_induk');
     }
 
     /**
