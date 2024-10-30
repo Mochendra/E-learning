@@ -20,7 +20,7 @@
         <tbody id="yearTableBody">
             <tr>
                 <th scope="row">1</th>
-                <td class="year-name">2024-2025</td>
+                <td class="year-name">2024</td>
                 <td>
                     <button class="btn btn-danger btn-sm me-2">Delete</button>
                     <button class="btn btn-primary btn-sm edit-btn" data-bs-toggle="modal" data-bs-target="#editYearModal">Edit</button>
@@ -42,7 +42,7 @@
                 <form id="addYearForm">
                     <div class="mb-3">
                         <label for="yearName" class="form-label">Tahun Ajar</label>
-                        <input type="text" class="form-control" id="yearName" name="yearName" placeholder="Contoh: 2024-2025" required>
+                        <input type="text" class="form-control" id="yearName" name="yearName" placeholder="Contoh: 2024" required>
                     </div>
                     <button type="submit" class="btn btn-success">Tambah</button>
                 </form>

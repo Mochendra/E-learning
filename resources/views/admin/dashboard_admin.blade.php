@@ -9,12 +9,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Russo+One&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
     <style>
@@ -28,17 +29,62 @@
             background-color: #f8f9fa;
             /* Warna latar belakang yang lembut */
         }
+
+        .btn svg {
+            width: 24px;
+            /* Sesuaikan ukuran yang diinginkan */
+            height: 24px;
+            /* Sesuaikan ukuran yang diinginkan */
+            fill: currentColor;
+            color: #dc3545;
+        }
     </style>
 </head>
 
 <body class="Background-dashboard-guru">
     <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('illustrations/logo.png') }}" alt="Logo"
-                    style="width: 40px; height: 45px; margin-right: 10px;">
-            </a>
-            <a class="navbar-brand text-white" href="#">Halaman Admin</a>
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('illustrations/logo.png') }}" alt="Logo"
+                        style="width: 40px; height: 45px; margin-right: 10px;">
+                </a>
+                <a class="navbar-brand text-white" href="#">Halaman Admin</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="{{ route('tambah_siswa.index') }}">Tambah siswa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="{{ route('tambah_guru.index') }}">Tambah guru</a>
+                    </li>
+                </ul>
+            </div>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="margin-right:5%">
+                @csrf
+                <button type="button" class="btn" onclick="confirmLogout()">
+                    <x-logout />
+                </button>
+            </form>
+            <script>
+                function confirmLogout() {
+                    Swal.fire({
+                        title: 'Apakah Anda yakin?',
+                        text: "Anda akan keluar dari sistem",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Ya, Logout!',
+                        cancelButtonText: 'Batal'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            document.getElementById('logout-form').submit();
+                        }
+                    })
+                }
+            </script>
         </div>
     </nav>
 

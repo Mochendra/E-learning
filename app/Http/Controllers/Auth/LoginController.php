@@ -29,7 +29,22 @@ class LoginController extends Controller
         // Cek kredensial
         if (Auth::attempt(['nomor_induk' => $request->nomor_induk, 'password' => $request->password])) {
             // Jika berhasil, redirect ke dashboard
-            return redirect()->intended('/dashboard_siswa'); // Ganti '/dashboard' sesuai dengan rute dashboard Anda
+            $user = Auth::user();
+
+            // Redirect berdasarkan role
+            switch ($user->role) {
+                case 'siswa':
+                    return redirect()->intended('/dashboard_siswa');
+                case 'admin':
+                    return redirect()->intended('/dashboard_admin');
+                case 'koorjadwal':
+                    return redirect()->intended('/dashboard_koorjadwal');
+                case 'guru':
+                    return redirect()->intended('/dashboard_guru');
+                default:
+                    Auth::logout();
+                    return redirect()->route('login')->with('error', 'Role tidak dikenali.');
+            }
         }
 
         // Jika gagal, kembali dengan pesan error
@@ -41,9 +56,14 @@ class LoginController extends Controller
     /**
      * Handle logout.
      */
-    public function logout()
+    public function logout(Request $request)
     {
         Auth::logout();
-        return redirect('/login'); // Ganti dengan rute login Anda
+    
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+    
+        return redirect('/login')->with('status', 'Anda telah berhasil logout.');
     }
+    
 }

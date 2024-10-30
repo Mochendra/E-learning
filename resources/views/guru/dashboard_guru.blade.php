@@ -15,7 +15,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Dancing+Script:wght@400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&family=Russo+One&display=swap"
         rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <style>
         .table-bordered th, .table-bordered td {
@@ -23,6 +24,14 @@
         }
         .Background-dashboard-guru {
             background-color: #f8f9fa; /* Warna latar belakang yang lembut */
+        }
+        .btn svg {
+            width: 24px;
+            /* Sesuaikan ukuran yang diinginkan */
+            height: 24px;
+            /* Sesuaikan ukuran yang diinginkan */
+            fill: currentColor;
+            color: #dc3545;
         }
     </style>
     
@@ -49,9 +58,34 @@
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="/kelas_angkatan_guru">Kelas Mengajar</a>
                     </li>
+                    <li class="nav-item">
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="margin-right:5%">
+                            @csrf
+                            <button type="button" class="btn" onclick="confirmLogout()">
+                                <x-logout />
+                            </button>
+                        </form>
+                    </li>
                 </ul>
             </div>
-            
+            <script>
+                function confirmLogout() {
+                    Swal.fire({
+                        title: 'Apakah Anda yakin?',
+                        text: "Anda akan keluar dari sistem",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Ya, Logout!',
+                        cancelButtonText: 'Batal'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            document.getElementById('logout-form').submit();
+                        }
+                    })
+                }
+                </script>
         </div>
     </nav>
 
@@ -62,7 +96,7 @@
         <!-- Informasi Akademik di sebelah kanan ujung -->
         <div class="card-body text-end" style="margin-top: 10px;">
             <p>Semester: Ganjil</p>
-            <p>Tahun Ajaran: 2024/2025</p>
+            <p>Tahun Ajaran: 2024</p>
         </div>
     </div>
     
@@ -71,7 +105,7 @@
         <div class="d-flex align-items-center justify-content-between flex-wrap">
             <div class="nomor_nama">
                 <p>Anda Login sebagai</p>
-                <p class="nama_siswa">Catur Mahendra</p>
+                <p class="nama_guru">ahmad</p>
             </div>
             
             <div class="btn-group">
@@ -112,7 +146,7 @@
                 <tr>
                     <th scope="col">No.</th>
                     <th scope="col">Hari</th>
-                    <th scope="col">Jam</th>
+                    <th scope="col" colspan="2">Jam</th>
                     <th scope="col">Guru</th>
                     <th scope="col">Mata Pelajaran</th>
                     <th scope="col">Kelas</th>
@@ -123,6 +157,7 @@
                     <th scope="row">1</th>
                     <td>Senin</td>
                     <td>07:00</td>
+                    <td>08:00</td>
                     <td>Ahmad</td>
                     <td>Seni Budaya</td>
                     <td>7F</td>
@@ -131,6 +166,7 @@
                     <th scope="row">2</th>
                     <td>Rabu</td>
                     <td>09:00</td>
+                    <td>10:00</td>
                     <td>Habib</td>
                     <td>Kimia</td>
                     <td>7H</td>
@@ -139,6 +175,7 @@
                     <th scope="row">3</th>
                     <td>Jumat</td>
                     <td>12:00</td>
+                    <td>13:00</td>
                     <td>Rizky</td>
                     <td>Matematika</td>
                     <td>9A</td>

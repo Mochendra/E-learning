@@ -9,6 +9,9 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\AdminController;
 use App\Http\Controllers\UserController;
 
+use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\GuruController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,12 +36,39 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 
 
 Route::match(['get', 'post'], '/dashboard_admin/user/store', [UserController::class, 'store'])->name('admin.user.store');
-Route::get('/dashboard_admin', [AdminController::class, 'index'])->name('dashboard_admin');
+    Route::get('/dashboard_admin', [AdminController::class, 'index'])->name('dashboard_admin');
+
+
+Route::get('/dashboard_siswa', function () {
+    return view('siswa.dashboard_siswa');
+})->name('dashboard.siswa')->middleware('auth');
+
+
+Route::get('/dashboard_koorjadwal', function () {
+    return view('koorjadwal.dashboard_koorjadwal');
+})->name('dashboard.koorjadwal')->middleware('auth');
+
+
+Route::get('/dashboard_guru', function () {
+    return view('guru.dashboard_guru');
+})->name('dashboard.guru')->middleware('auth');
+
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::post('/guru/store', [GuruController::class, 'store'])->name('guru.store');
+Route::post('/siswa/store', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/guru', [GuruController::class, 'index'])->name('guru.index');
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
 
 
 
+// Route to show the add student page with the table
+Route::get('/tambah_siswa', [SiswaController::class, 'index'])->name('tambah_siswa.index');
+Route::post('/tambah_siswa', [SiswaController::class, 'store'])->name('tambah_siswa.store');
 
-//selesai ------------------
+Route::get('/tambah_guru', [GuruController::class, 'index'])->name('tambah_guru.index');
+Route::post('/tambah_guru', [GuruController::class, 'store'])->name('tambah_guru.store');
 
 Route::get('/', function () {
     return view('welcome');
@@ -74,13 +104,25 @@ Route::get('/', function () {
 //     return view('admin.dashboard_admin', ['user' => $user]);
 // });
 
+// Route::get('/tambah_siswa', function () {
+//     // Mengirim data    ke tampilan Blade
+//     $user = Auth::user();
+//     return view('admin.tambah_siswa', ['user' => $user]);
+// });
+
+// Route::get('/tambah_guru', function () {
+//     // Mengirim data    ke tampilan Blade
+//     $user = Auth::user();
+//     return view('admin.tambah_guru', ['user' => $user]);
+// });
+
 // KOOR----------------------------------------------------------------------------------
 
-Route::get('/dashboard_koorjadwal', function () {
-    // Mengirim data ke tampilan Blade
-    $user = Auth::user();
-    return view('koorjadwal.dashboard_koorjadwal', ['user' => $user]);
-});
+// Route::get('/dashboard_koorjadwal', function () {
+//     // Mengirim data ke tampilan Blade
+//     $user = Auth::user();
+//     return view('koorjadwal.dashboard_koorjadwal', ['user' => $user]);
+// });
 
 Route::get('/koorjadwal_siswa', function () {
     // Mengirim data ke tampilan Blade
@@ -114,11 +156,11 @@ Route::get('/rekap_nilai', function () {
     return view('guru.rekap_nilai', ['user' => $user]);
 });
 
-Route::get('/dashboard_guru', function () {
-    // Mengirim data ke tampilan Blade
-    $user = Auth::user();
-    return view('guru.dashboard_guru', ['user' => $user]);
-});
+// Route::get('/dashboard_guru', function () {
+//     // Mengirim data ke tampilan Blade
+//     $user = Auth::user();
+//     return view('guru.dashboard_guru', ['user' => $user]);
+// });
 
 Route::get('/kelas_angkatan_guru', function () {
     // Mengirim data ke tampilan Blade
@@ -275,11 +317,11 @@ Route::get('/kelas_IX_siswa', function () {
 
 // SISWA---------------------------------------------------------------------------------
 
-Route::get('/dashboard_siswa', function () {
-    // Mengirim data ke tampilan Blade
-    $user = Auth::user();
-    return view('siswa.dashboard_siswa', ['user' => $user]);
-});
+// Route::get('/dashboard_siswa', function () {
+//     // Mengirim data ke tampilan Blade
+//     $user = Auth::user();
+//     return view('siswa.dashboard_siswa', ['user' => $user]);
+// });
 
 Route::get('/kelas_IX_siswa_detail', function () {
     // Mengirim data ke tampilan Blade
