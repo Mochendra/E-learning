@@ -54,10 +54,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{ route('tambah_siswa.index') }}">Tambah siswa</a>
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ route('tambah_siswa.index') }}">Tambah siswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="{{ route('tambah_guru.index') }}">Tambah guru</a>
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ route('tambah_guru.index') }}">Tambah guru</a>
                     </li>
                 </ul>
             </div>
@@ -108,7 +110,7 @@
                 <thead class="table-dark">
                     <tr>
                         <th scope="col">No.</th>
-                        <th scope="col">No Induk</th>
+                        <th scope="col">NIS/NIP</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Peran</th>
                         <th scope="col">Status</th>
@@ -118,8 +120,8 @@
                     @foreach ($users as $index => $user)
                         <tr>
                             <th scope="row">{{ $index + 1 }}</th>
-                            <td>{{ $user->nomor_induk }}</td>
-                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->nomor_induk ?? $user->nip }}</td>
+                            <td>{{ $user->nama }}</td>
                             <td>{{ ucfirst($user->role) }}</td>
                             <td>{{ $user->status }}</td>
                         </tr>
@@ -142,28 +144,55 @@
                     <form action="{{ route('register') }}" method="POST">
                         @csrf
                         <div class="mb-3">
-                            <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                id="name" placeholder="Masukkan Nama" name="name" value="{{ old('name') }}"
-                                required>
-                            @error('name')
+                            <label for="role" class="form-label">Pilih Role</label>
+                            <select class="form-select @error('role') is-invalid @enderror" id="role"
+                                name="role" required>
+                                <option value="" disabled selected>Pilih Role</option>
+                                <option value="admin">Admin</option>
+                                <option value="guru">Guru</option>
+                                <option value="siswa">Siswa</option>
+                                <option value="koorjadwal">Koorjadwal</option>
+                            </select>
+                            @error('role')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
+                        <div class="mb-3" id="siswaInput">
+                            <label for="nomor_induk" class="form-label">NIS</label>
+                            <select class="form-select" name="nomor_induk" id="nomor_induk">
+                                <option value="" selected>Pilih NIS</option>
+                                @foreach ($siswa as $s)
+                                    <option value="{{ $s->nomor_induk }}">{{ $s->nomor_induk }} -
+                                        {{ $s->nama }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <!-- Dropdown untuk NIP guru -->
+                        <div class="mb-3" id="guruInput">
+                            <label for="nip" class="form-label">NIP</label>
+                            <select class="form-select" name="nip" id="nip">
+                                <option value="" selected>Pilih NIP</option>
+                                @foreach ($guru as $g)
+                                    <option value="{{ $g->nip }}">{{ $g->nip }} - {{ $g->nama }}
+                                    </option> <!-- Pastikan 'nama' digunakan di sini -->
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nama" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="nama" name="name" readonly>
+                        </div>
 
+                        <div class="mb-3">
+                            <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
+                            <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin"
+                                readonly>
+                        </div>
                         <div class="mb-3">
                             <input type="email" class="form-control @error('email') is-invalid @enderror"
-                                id="email" placeholder="Masukkan Email" name="email" value="{{ old('email') }}"
-                                required>
+                                id="email" placeholder="Masukkan Email" name="email"
+                                value="{{ old('email') }}" required>
                             @error('email')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3">
-                            <input type="text" class="form-control @error('nomor_induk') is-invalid @enderror"
-                                placeholder="Masukkan No. Induk" id="nomor_induk" name="nomor_induk"
-                                value="{{ old('nomor_induk') }}" required>
-                            @error('nomor_induk')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
@@ -190,21 +219,6 @@
                             @enderror
                         </div>
 
-                        <div class="mb-3">
-                            <label for="role" class="form-label">Pilih Role</label>
-                            <select class="form-select @error('role') is-invalid @enderror" id="role"
-                                name="role" required>
-                                <option value="" disabled selected>Pilih Role</option>
-                                <option value="admin">Admin</option>
-                                <option value="guru">Guru</option>
-                                <option value="siswa">Siswa</option>
-                                <option value="koorjadwal">Koorjadwal</option>
-                            </select>
-                            @error('role')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-
                         <button type="submit" class="btn btn-primary w-100" style="margin-bottom: 10px">
                             Buat Akun
                         </button>
@@ -218,9 +232,48 @@
             </div>
         </div>
     </div>
-
-
     <script>
+        // memunculkan dropdown siswa dan guru
+        document.getElementById('role').addEventListener('change', function() {
+            var role = this.value;
+            document.getElementById('siswaInput').style.display = role === 'siswa' ? 'block' : 'none';
+            document.getElementById('guruInput').style.display = (role === 'guru' || role === 'koorjadwal') ?
+                'block' : 'none';
+        });
+
+        document.getElementById('nomor_induk').addEventListener('change', function() {
+            var selectedOption = this.options[this.selectedIndex];
+            var selectedName = selectedOption.text.split(' - ')[1]; // Ambil nama dari opsi
+            var selectedGender = ''; // Anda perlu mendapatkan jenis kelamin dari data siswa
+
+            // Temukan jenis kelamin berdasarkan Nomor Induk (Anda perlu menyesuaikan ini sesuai data Anda)
+            @foreach ($siswa as $s)
+                if (selectedOption.value === '{{ $s->nomor_induk }}') {
+                    selectedGender = '{{ $s->jenis_kelamin }}'; // Ambil jenis kelamin dari data siswa
+                }
+            @endforeach
+
+            document.getElementById('nama').value = selectedName; // Isi nama
+            document.getElementById('jenis_kelamin').value =
+            selectedGender; // Isi jenis kelamin (perbaikan di sini)
+        });
+
+        document.getElementById('nip').addEventListener('change', function() {
+            var selectedOption = this.options[this.selectedIndex];
+            var selectedName = selectedOption.text.split(' - ')[1]; // Ambil nama dari opsi
+            var selectedGender = ''; // Anda perlu mendapatkan jenis kelamin dari data guru
+
+            // Temukan jenis kelamin berdasarkan NIP (Anda perlu menyesuaikan ini sesuai data Anda)
+            @foreach ($guru as $g)
+                if (selectedOption.value === '{{ $g->nip }}') {
+                    selectedGender = '{{ $g->jenis_kelamin }}'; // Ambil jenis kelamin dari data guru
+                }
+            @endforeach
+
+            document.getElementById('nama').value = selectedName; // Isi nama
+            document.getElementById('jenis_kelamin').value = selectedGender; // Isi jenis kelamin
+        });
+
         function filterData() {
             const searchInput = document.getElementById('searchInput').value.toLowerCase();
             const tableRows = document.querySelectorAll('tbody tr');
@@ -230,6 +283,9 @@
                 row.style.display = userName.includes(searchInput) ? '' : 'none';
             });
         }
+        $('#modalAkun').on('show.bs.modal', function() {
+            console.log('Modal dibuka');
+        });
     </script>
 
 </body>

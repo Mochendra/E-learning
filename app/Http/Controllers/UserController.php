@@ -13,7 +13,7 @@ class UserController extends Controller
     {
         $request->validate([
             'role' => ['required', Rule::in(['siswa', 'guru', 'admin', 'koorjadwal'])],
-            'name' => 'required|string|max:255',
+            'nama' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|confirmed',
             'no_whatsapp' => 'nullable|string|max:15',
@@ -21,7 +21,7 @@ class UserController extends Controller
 
         User::create([
             'role' => $request->role,
-            'name' => $request->name,
+            'nama' => $request->nama,
             'email' => $request->email,
             'password' => Hash::make($request->password), // Encrypt password
             'no_whatsapp' => $request->no_whatsapp,

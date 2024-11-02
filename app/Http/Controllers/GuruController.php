@@ -11,7 +11,8 @@ class GuruController extends Controller
     public function create()
     {
         // Tampilkan halaman tambah guru
-        return view('admin.tambah_guru');
+        $guru = DataGuru::all();
+        return view('admin.tambah_guru', compact('guru'));
     }
 
     public function store(Request $request)
@@ -27,7 +28,7 @@ class GuruController extends Controller
     
         DataGuru::create($request->all());
     
-        return redirect()->back()->with('success', 'Data guru berhasil ditambahkan');
+        return redirect()->route('tambah_guru.index')->with('success', 'Data guru berhasil ditambahkan');
     }
 
     public function index()

@@ -25,23 +25,27 @@
 
 <body>
     <div class="container my-5">
-        <h2>Data Guru</h2>
+        <h2>Data Guru</h2>  
+        @if(session('success'))
+            <div class="alert alert-success">{{ session('success') }}</div>
+        @endif
+        @if(session('error'))
+            <div class="alert alert-danger">{{ session('error') }}</div>
+        @endif
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalTambahGuru">Tambah Guru</button>
         <table class="table table-bordered mt-3">
             <thead>
                 <tr>
-                    <th>ID</th>
                     <th>NIP</th>
-                    <th>Alamat</th>
-                    <th>No Telepon</th>
-                    <th>Tanggal lahir</th>
+                    <th>Nama</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tanggal Lahir</th>
                 </tr>
             </thead>
             <tbody>
                 @if(isset($guru) && $guru->isNotEmpty())
                     @foreach($guru as $item)
                         <tr>
-                            <td>{{ $item->id }}</td>
                             <td>{{ $item->nip }}</td>
                             <td>{{ $item->nama }}</td>
                             <td>{{ $item->jenis_kelamin }}</td>
@@ -58,11 +62,10 @@
     </div>
 
     <!-- Modal Guru -->
-    <div class="modal fade" id="modalTambahGuru" tabindex="-1" aria-labelledby="modalTambahGuruLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="modalTambahGuru" tabindex="-1" aria-labelledby="modalTambahGuruLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="{{ route('guru.store') }}" method="POST">
+                <form action="{{ route('tambah_guru.store') }}" method="POST">
                     @csrf
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalTambahGuruLabel">Tambah Guru</h5>
@@ -96,9 +99,8 @@
                     </div>
                 </form>
             </div>
-        </div>        
+        </div>
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

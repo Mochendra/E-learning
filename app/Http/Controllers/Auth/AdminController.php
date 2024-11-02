@@ -5,15 +5,17 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User; // Make sure to import the User model
+use App\Models\DataGuru;
+use App\Models\DataSiswa;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        // Fetch all users
-        $users = User::all();
+        $users = User::all(); // Ambil semua pengguna
+        $siswa = DataSiswa::all(); // Ambil semua data siswa
+        $guru = DataGuru::all(); // Ambil semua data guru
 
-        // Return the view for the admin dashboard
-        return view('admin.dashboard_admin', compact('users'));
+        return view('admin.dashboard_admin', compact('users', 'siswa', 'guru'));
     }
 }

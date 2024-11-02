@@ -32,6 +32,7 @@
             <thead>
                 <tr>
                     <th>NIK</th>
+                    <th>Nomor Induk</th>
                     <th>Nama</th>
                     <th>Jenis Kelamin</th>
                     <th>Tanggal Lahir</th>
@@ -42,6 +43,7 @@
                     @foreach($siswa as $item)
                         <tr>
                             <td>{{ $item->nik }}</td>
+                            <td>{{ $item->nomor_induk    }}</td>
                             <td>{{ $item->nama }}</td>
                             <td>{{ $item->jenis_kelamin }}</td>
                             <td>{{ $item->tanggal_lahir }}</td>
@@ -51,7 +53,7 @@
                     <tr>
                         <td colspan="6" class="text-center">Tidak ada data siswa</td>
                     </tr>
-                @endif
+                @endif  
             </tbody>            
         </table>
     </div>
@@ -69,6 +71,10 @@
                         <div class="mb-3">
                             <label for="nik" class="form-label">NIK</label>
                             <input type="text" name="nik" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nomor_induk" class="form-label">No. Induk</label>
+                            <input type="text" name="nomor_induk" class="form-control" required>
                         </div>
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama</label>
