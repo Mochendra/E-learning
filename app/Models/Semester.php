@@ -7,7 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Semester extends Model
 {
-    protected $fillable = ['name', 'tahun_ajaran'];
+    protected $table = 'semesters';
+    protected $fillable = [
+        'name',
+        'tahun_ajaran',
+        'start_date',
+        'end_date',
+        'is_active'
+    ];
 
     // Relasi One-to-Many dengan MataPelajaran
     public function mataPelajaran()

@@ -34,7 +34,7 @@
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <a href="/kelas_VII" style="text-decoration: none; color: inherit;">
+                <a href="/kelas/VII" style="text-decoration: none; color: inherit;">
                     <div class="card text-center mb-3" style="height: 250px; cursor: pointer;">
                         <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
                             <h5 class="card-title">Kelas VII</h5>
@@ -46,7 +46,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="/kelas_VIII" style="text-decoration: none; color: inherit;">
+                <a href="/kelas/VIII" style="text-decoration: none; color: inherit;">
                     <div class="card text-center mb-3" style="height: 250px; cursor: pointer;">
                         <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
                             <h5 class="card-title">Kelas VIII</h5>
@@ -58,7 +58,7 @@
                 </a>
             </div>
             <div class="col-md-4">
-                <a href="/kelas_IX" style="text-decoration: none; color: inherit;">
+                <a href="/kelas/IX" style="text-decoration: none; color: inherit;">
                     <div class="card text-center mb-3" style="height: 250px; cursor: pointer;">
                         <div class="card-body" style="display: flex; flex-direction: column; height: 100%;">
                             <h5 class="card-title">Kelas IX</h5>

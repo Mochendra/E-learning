@@ -7,13 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class MataPelajaran extends Model
 {
-    protected $fillable = ['name', 'semester_id'];
+    protected $table = 'mata_pelajaran'; 
+    protected $fillable = ['name'];
+    // protected $table = 'mata_pelajaran'; // Pastikan nama tabel sesuai
+    // protected $fillable = ['name', 'kode_kelas', 'semester_id']; // Sesuaikan dengan kolom di tabel
 
     // Relasi Many-to-One dengan Semester
-    public function semester()
-    {
-        return $this->belongsTo(Semester::class);
-    }
+
 
     // Relasi One-to-Many dengan Jadwal
     public function jadwal()

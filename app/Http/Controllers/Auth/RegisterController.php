@@ -17,15 +17,16 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
+    
     public function register(Request $request)
     {
         $role = $request->role;
 
         // Validasi input
         $request->validate([
-            'role' => 'required|in:siswa,guru',
+            'role' => 'required|in:siswa,guru,admin,koorjadwal', // Pastikan semua role yang valid ada di sini
             'nomor_induk' => $role === 'siswa' ? 'required|string' : 'nullable',
-            'nip' => $role === 'guru' ? 'required|string' : 'nullable',
+            'nip' => ($role === 'guru' || $role === 'admin' || $role === 'koorjadwal') ? 'required|string' : 'nullable',
             'email' => 'required|email|unique:users,email', // Validasi email
             'no_whatsapp' => 'required|string|max:15', // Validasi no_whatsapp
             'password' => 'required|string|min:6',
@@ -35,14 +36,14 @@ class RegisterController extends Controller
         if ($role === 'siswa') {
             // Ambil data siswa berdasarkan nomor induk
             $siswa = DataSiswa::where('nomor_induk', $request->nomor_induk)->first();
-        
+
             // Log data siswa untuk debugging
             \Log::info('Siswa Data:', (array) $siswa); // Pastikan data siswa tidak null
-        
+
             if (!$siswa) {
                 return redirect()->back()->withErrors(['nomor_induk' => 'Nomor induk tidak ditemukan']);
             }
-        
+
             $userData = [
                 'nomor_induk' => $siswa->nomor_induk, // Tambahkan nomor_induk
                 'nama' => $siswa->nama, // Ambil nama dari data_siswa
@@ -50,18 +51,19 @@ class RegisterController extends Controller
                 'no_whatsapp' => $request->no_whatsapp, // Ambil no_whatsapp dari input
                 'role' => 'siswa',
                 'password' => Hash::make($request->password),
+                'jenis_kelamin' => $siswa->jenis_kelamin, // Tambahkan jenis_kelamin
             ];
         } elseif ($role === 'guru') {
             // Ambil data guru berdasarkan NIP
             $guru = DataGuru::where('nip', $request->nip)->first();
-        
+
             // Log data guru untuk debugging
             \Log::info('Guru Data:', (array) $guru); // Pastikan data guru tidak null
-        
+
             if (!$guru) {
                 return redirect()->back()->withErrors(['nip' => 'NIP tidak ditemukan']);
             }
-        
+
             $userData = [
                 'nip' => $guru->nip, // Jika Anda ingin menyimpan NIP sebagai nomor_induk
                 'nama' => $guru->nama, // Ambil nama dari data_guru
@@ -69,9 +71,41 @@ class RegisterController extends Controller
                 'no_whatsapp' => $request->no_whatsapp, // Ambil no_whatsapp dari input
                 'role' => 'guru',
                 'password' => Hash::make($request->password),
+                'jenis_kelamin' => $guru->jenis_kelamin, // Tambahkan jenis_kelamin
+            ];
+        } elseif ($role === 'koorjadwal') {
+            $koorjadwal = DataGuru::where('nip', $request->nip)->first();
+
+            if (!$koorjadwal) {
+                return redirect()->back()->withErrors(['nip' => 'NIP tidak ditemukan']);
+            }
+
+            $userData = [
+                'nip' => $koorjadwal->nip,
+                'nama' => $koorjadwal->nama,
+                'email' => $request->email,
+                'no_whatsapp' => $request->no_whatsapp,
+                'role' => 'koorjadwal',
+                'password' => Hash::make($request->password),
+                'jenis_kelamin' => $koorjadwal->jenis_kelamin, // Tambahkan jenis_kelamin
+            ];
+        } elseif ($role === 'admin') {
+            $admin = DataGuru::where('nip', $request->nip)->first();
+
+            if (!$admin) {
+                return redirect()->back()->withErrors(['nip' => 'NIP tidak ditemukan']);
+            }
+
+            $userData = [
+                'nip' => $admin->nip, // Tambahkan NIP untuk admin
+                'nama' => $admin->nama,
+                'email' => $request->email,
+                'no_whatsapp' => $request->no_whatsapp,
+                'role' => 'admin',
+                'password' => Hash::make($request->password), // Tambahkan password
+                'jenis_kelamin' => $admin->jenis_kelamin, // Tambahkan jenis_kelamin
             ];
         }
-
         // Log data pengguna yang akan disimpan
         \Log::info('User  Data to be Created:', $userData);
 

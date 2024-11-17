@@ -8,8 +8,7 @@
 
         <div class="row mb-3">
             <div class="col-md-4">
-                <input type="text" class="form-control" id="searchInput" placeholder="Cari siswa..."
-                    oninput="filterData()">
+                <input type="text" class="form-control" id="searchInput" placeholder="Cari siswa..." oninput="filterData()">
             </div>
             <div class="col-md-2">
                 <button class="btn btn-outline-success" onclick="filterData()">Search</button>
@@ -28,40 +27,22 @@
                     <th scope="col">Nomor Induk</th>
                     <th scope="col">Nama Siswa</th>
                     <th scope="col">Kelas</th>
+                    <th scope="col">Aksi</th>
                 </tr>
             </thead>
             <tbody id="siswaTableBody">
-                <tr>
-                    <td><input type="checkbox" class="studentCheckbox" value="Ahmad"></td>
-                    <td>1</td>
-                    <td>12345</td>
-                    <td>Ahmad</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="studentCheckbox" value="Habib"></td>
-                    <td>2</td>
-                    <td>12346</td>
-                    <td>Habib</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="studentCheckbox" value="Rizky"></td>
-                    <td>3</td>
-                    <td>12347</td>
-                    <td>Rizky</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="studentCheckbox" value="Bima"></td>
-                    <td>4</td>
-                    <td>12348</td>
-                    <td>Bima</td>
-                    <td>-</td>
-                </tr>
+                @foreach ($siswa as $index => $student)
+                    <tr>
+                        <td><input type="checkbox" class="studentCheckbox" value="{{ $student->id }}" data-name="{{ $student->nama }}"></td>
+                        <td>{{ $index + 1 }}</td>
+                        <td>{{ $student->nomor_induk }}</td> <!-- Ganti dengan kolom yang sesuai -->
+                        <td>{{ $student->nama }}</td>
+                        <td>{{ $student->siswaKelas->kelas->nama_kelas ?? '-' }}</td> <!-- Ambil nama kelas -->
+                        <td><button class="btn btn-danger btn-sm me-2" >Delete</button></td>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
-
     </div>
 
     <!-- Modal untuk Pengelompokan Kelas -->
@@ -73,48 +54,17 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="groupForm">
-                        <div class="mb-3">
-                            <label for="kelas" class="form-label">Kelas</label>
-                            <select class="form-select" id="kelas" required>
-                                <option value="">Pilih Kelas</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="kodeKelas" class="form-label">Kode Kelas</label>
-                            <select class="form-select" id="kodeKelas" required>
-                                <option value="">Pilih Kode Kelas</option>
-                                <option value="A">A</option>
-                                <option value="B">B</option>
-                                <option value="C">C</option>
-                                <option value="D">D</option>
-                                <option value="E">E</option>
-                                <option value="F">F</option>
-                                <option value="G">G</option>
-                                <option value="H">H</option>
-                                <option value="I">I</option>
-                                <option value="J">J</option>
-                                <option value="K">K</option>
-                                <option value="L">L</option>
-                                <option value="M">M</option>
-                                <option value="N">N</option>
-                                <option value="O">O</option>
-                                <option value="P">P</option>
-                                <option value="Q">Q</option>
-                                <option value="R">R</option>
-                                <option value="S">S</option>
-                                <option value="T">T</option>
-                                <option value="U">U</option>
-                                <option value="V">V</option>
-                                <option value="W">W</option>
-                                <option value="X">X</option>
-                                <option value="Y">Y</option>
-                                <option value="Z">Z</option>
-                            </select>
-                        </div>                        
+                    <form action="{{ route('koorjadwal.siswa.store') }}" method="POST">
+                        @csrf
+                        <label for="kelas" class="form-label">Kelas</label>
+                        <select class="form-select" id="kelas" name="kelas_id" required>
+                            <option value="">Pilih Kelas</option>
+                            @foreach ($kelasList as $kelas)
+                                <option value="{{ $kelas->id }}">{{ $kelas->nama_kelas }}</option>
+                            @endforeach
+                        </select>
+
+                        <input type="hidden" name="siswa_ids" id="siswa_ids">
                         <button type="submit" class="btn btn-primary">Simpan Pengelompokan</button>
                     </form>
                 </div>
@@ -145,22 +95,17 @@
             });
         }
 
-        document.getElementById('groupForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const kelas = document.getElementById('kelas').value;
-            const kodeKelas = document.getElementById('kodeKelas').value;
-            const selectedStudents = Array.from(document.querySelectorAll('.studentCheckbox:checked')).map(
-                checkbox => checkbox.value);
+        // Function to collect selected students' IDs
+        function collectSelectedStudents() {
+            const selectedStudents = [];
+            const checkboxes = document.querySelectorAll('.studentCheckbox:checked');
+            checkboxes.forEach(checkbox => {
+                selectedStudents.push(checkbox.value);
+            });
+            document.getElementById('siswa_ids').value = JSON.stringify(selectedStudents); // Store as JSON
+        }
 
-            if (selectedStudents.length === 0) {
-                alert('Silakan pilih siswa yang akan dikelompokkan.');
-                return;
-            }
-
-            alert(`Siswa ${selectedStudents.join(', ')} berhasil dikelompokkan ke Kelas ${kelas} ${kodeKelas}`);
-            this.reset();
-            const modal = bootstrap.Modal.getInstance(document.getElementById('modalKelas'));
-            modal.hide();
-        });
+        // Ensure to collect selected students before submitting the form
+        document.querySelector('form').addEventListener('submit', collectSelectedStudents);
     </script>
 @endsection

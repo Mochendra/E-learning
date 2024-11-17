@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kelas extends Model
 {
-    protected $fillable = ['name'];
+    protected $table = 'kelas';
+    protected $fillable = ['tingkat','kode_kelas'];
 
     // Relasi Many-to-Many dengan User
     public function siswa()
@@ -22,8 +23,15 @@ class Kelas extends Model
     }
 
     // Relasi One-to-Many dengan Jadwal
-    public function jadwal()
+    public function jadwals()
     {
-        return $this->hasMany(Jadwal::class);
+        return $this->hasMany(Jadwal::class, 'kelas_id', 'id');
     }
+    
+
+        // Gabungan tingkat dan kode kelas
+        public function getNamaKelasAttribute()
+        {
+            return $this->tingkat . ' ' . $this->kode_kelas;
+        }   
 }

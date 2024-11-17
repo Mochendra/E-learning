@@ -144,44 +144,46 @@
         <table class="table table-striped table-bordered rounded-table mt-4">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">No.</th>
-                    <th scope="col">Hari</th>
-                    <th scope="col" colspan="2">Jam</th>
-                    <th scope="col">Guru</th>
-                    <th scope="col">Mata Pelajaran</th>
-                    <th scope="col">Kelas</th>
+                    <th>No</th>
+                    <th>Hari</th>
+                    <th>Jam</th>
+                    <th>Guru</th>
+                    <th>Mata Pelajaran</th>
+                    <th>Kelas</th>
+                    <th>Semester</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Senin</td>
-                    <td>07:00</td>
-                    <td>08:00</td>
-                    <td>Ahmad</td>
-                    <td>Seni Budaya</td>
-                    <td>7F</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Rabu</td>
-                    <td>09:00</td>
-                    <td>10:00</td>
-                    <td>Habib</td>
-                    <td>Kimia</td>
-                    <td>7H</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Jumat</td>
-                    <td>12:00</td>
-                    <td>13:00</td>
-                    <td>Rizky</td>
-                    <td>Matematika</td>
-                    <td>9A</td>
-                </tr>
+                @if ($jadwalsEmpty)
+                    <tr>
+                        <td colspan="8" class="text-center">Tidak ada jadwal tersedia</td>
+                    </tr>
+                @else
+                    @foreach ($jadwals as $index => $jadwal)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $jadwal->hari ?? 'Tidak ada' }}</td>
+                            <td>
+                                {{ \Carbon\Carbon::parse($jadwal->jam_mulai)->format('H:i') ?? 'Tidak ada' }} -
+                                {{ \Carbon\Carbon::parse($jadwal->jam_selesai)->format('H:i') ?? 'Tidak ada' }}
+                            </td>
+                            <td>
+                                {{ $jadwal->guruRelation->name ?? $jadwal->guruRelation->nama ?? 'Nama Guru Tidak Tersedia' }}
+                            </td>
+                            <td>{{ optional($jadwal->mataPelajaran)->name ?? 'Mata Pelajaran tidak tersedia' }}</td>
+                            <td>
+                                {{ optional($jadwal->kelas)->tingkat ?? 'Tingkat' }}
+                                {{ optional($jadwal->kelas)->kode_kelas ?? 'Kelas' }}
+                            </td>
+                            <td>
+                                {{ optional($jadwal->semester)->name ?? 'Semester' }}
+                                {{ optional($jadwal->semester)->tahun_ajaran ?? 'Tahun Ajaran' }}
+                            </td>
+                        </tr>
+                    @endforeach
+                @endif
             </tbody>
-        </table>
+        </table>        
     </div>
 </body>
 

@@ -113,6 +113,8 @@
                         <th scope="col">NIS/NIP</th>
                         <th scope="col">Nama</th>
                         <th scope="col">Peran</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">P/L</th>
                         <th scope="col">Status</th>
                     </tr>
                 </thead>
@@ -123,6 +125,8 @@
                             <td>{{ $user->nomor_induk ?? $user->nip }}</td>
                             <td>{{ $user->nama }}</td>
                             <td>{{ ucfirst($user->role) }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->jenis_kelamin }}</td>
                             <td>{{ $user->status }}</td>
                         </tr>
                     @endforeach
@@ -237,8 +241,7 @@
         document.getElementById('role').addEventListener('change', function() {
             var role = this.value;
             document.getElementById('siswaInput').style.display = role === 'siswa' ? 'block' : 'none';
-            document.getElementById('guruInput').style.display = (role === 'guru' || role === 'koorjadwal') ?
-                'block' : 'none';
+            document.getElementById('guruInput').style.display = (role === 'guru' || role === 'koorjadwal' || role === 'admin') ? 'block' : 'none';
         });
 
         document.getElementById('nomor_induk').addEventListener('change', function() {

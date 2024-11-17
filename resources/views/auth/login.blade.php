@@ -18,7 +18,7 @@
                 <div class="mb-3">
                     <label class="form-label">Selamat datang</label>
                     <p class="italic-text">Isi untuk login.</p>
-                    
+
                     <!-- Menampilkan error jika ada -->
                     @if ($errors->any())
                         <div class="alert alert-danger">
@@ -28,8 +28,8 @@
 
                     <form action="{{ route('login') }}" method="POST">
                         @csrf
-                        <input type="text" name="nomor_induk" class="form-control" placeholder="Masukkan nomor induk"
-                            aria-label="Username" aria-describedby="basic-addon1" required>
+                        <input type="email" name="email" class="form-control" placeholder="Masukkan email"
+                        aria-label="Username" aria-describedby="basic-addon1" required>
                 </div>
                 <div class="mb-3">
                     <input type="password" name="password" class="form-control" placeholder="Masukkan kata sandi"

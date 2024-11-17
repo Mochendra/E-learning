@@ -9,5 +9,16 @@ class Material extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'content', 'teacher_id'];
+    protected $table = 'materi';    
+
+    protected $fillable = [
+        'judul',
+        'deskripsi',
+        'file_path',
+        'youtube_url',
+        'minggu',
+        'guru_id',
+        'mata_pelajaran_id',
+        'kelas_id',
+    ];
 }

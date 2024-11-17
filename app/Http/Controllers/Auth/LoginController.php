@@ -22,12 +22,12 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'nomor_induk' => 'required|string',
+            'email' => 'required|string',
             'password' => 'required|string',
         ]);
 
         // Cek kredensial
-        if (Auth::attempt(['nomor_induk' => $request->nomor_induk, 'password' => $request->password])) {
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             // Jika berhasil, redirect ke dashboard
             $user = Auth::user();
 
@@ -49,8 +49,8 @@ class LoginController extends Controller
 
         // Jika gagal, kembali dengan pesan error
         return back()->withErrors([
-            'nomor_induk' => 'Nomor Induk atau Password salah.',
-        ])->onlyInput('nomor_induk');
+            'email' => 'Email atau Password salah.',
+        ])->onlyInput('email');
     }
 
     /**

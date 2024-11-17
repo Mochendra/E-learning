@@ -13,9 +13,21 @@
         </div>
 
         <div class="mb-3">
-            <label for="due_time" class="form-label">Pilih Jam Deadline</label>
-            <input class="form-control mb-2" type="time" name="due_time" id="due_time" required>
-            <small>Pilih (AM untuk pagi), dan (PM untuk sore)</small>
+            <label for="jam" class="form-label">Jam</label>
+            <div class="d-flex">
+                <select class="form-select me-2" id="jam_hour" name="jam_hour" style="width: 100px;">
+                    <option value="">Jam</option>
+                    <?php for($i = 0; $i < 24; $i++): ?>
+                        <option value="<?= sprintf('%02d', $i) ?>"><?= sprintf('%02d', $i) ?></option>
+                    <?php endfor; ?>
+                </select>
+                <select class="form-select" id="jam_minute" name="jam_minute" style="width: 100px;">
+                    <option value="">Menit</option>
+                    <?php for($i = 0; $i < 60; $i += 1): ?>
+                        <option value="<?= sprintf('%02d', $i) ?>"><?= sprintf('%02d', $i) ?></option>
+                    <?php endfor; ?>
+                </select>
+            </div>
         </div>
 
         <h5 class="card-title">Tambahkan Soal</h5>

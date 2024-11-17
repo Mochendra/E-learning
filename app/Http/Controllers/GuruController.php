@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 class GuruController extends Controller
 {
 
-    public function create()
-    {
-        // Tampilkan halaman tambah guru
-        $guru = DataGuru::all();
-        return view('admin.tambah_guru', compact('guru'));
-    }
+    // public function create()
+    // {
+    //     // Tampilkan halaman tambah guru
+    //     $guru = DataGuru::all();
+    //     return view('admin.tambah_guru', compact('guru'));
+    // }
 
     public function store(Request $request)
     {
