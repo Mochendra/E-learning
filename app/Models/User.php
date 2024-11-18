@@ -1,45 +1,85 @@
-<?php
+    <?php
 
-namespace App\Models;
+    namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+    // use Illuminate\Contracts\Auth\MustVerifyEmail;
+    use Illuminate\Database\Eloquent\Factories\HasFactory;
+    use Illuminate\Foundation\Auth\User as Authenticatable;
+    use Illuminate\Notifications\Notifiable;
+    use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
-{
-    use HasApiTokens, HasFactory, Notifiable;
+    class User extends Authenticatable
+    {
+        use HasApiTokens, HasFactory, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+        /**
+         * The attributes that are mass assignable.
+         *
+         * @var array<int, string>
+         */
+        protected $fillable = [
+            'nama',
+            'name',
+            'email',
+            'password',
+            'no_whatsapp',
+            'role',
+            'nomor_induk',
+            'status',
+            'nip',
+            'jenis_kelamin',
+        ];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array<int, string>
-     */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
+        /**
+         * The attributes that should be hidden for serialization.
+         *
+         * @var array<int, string>
+         */
+        protected $hidden = [
+            'password',
+            'remember_token',
+        ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
-}
+        /**
+         * The attributes that should be cast.
+         *
+         * @var array<string, string>
+         */
+        protected $casts = [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+
+        // Relasi Many-to-Many dengan Kelas
+        public function kelas()
+        {
+            return $this->belongsToMany(Kelas::class, 'siswa_kelas');
+        }
+
+        // Relasi One-to-Many dengan JawabanQuiz
+        public function jawabanQuiz()
+        {
+            return $this->hasMany(JawabanQuiz::class);
+        }
+
+        // Relasi One-to-Many dengan Tugas
+        public function tugas()
+        {
+            return $this->hasMany(Tugas::class, 'siswa_id');
+        }
+
+        public function scopeGuru($query)
+        {
+            return $query->where('role', 'guru');
+        }
+
+        public function siswaKelas()
+        {
+            return $this->hasOne(SiswaKelas::class, 'siswa_id', 'id');
+        }
+
+        public function waliKelas()
+        {
+            return $this->hasOne(WaliKelas::class, 'guru_id');
+        }
+    }

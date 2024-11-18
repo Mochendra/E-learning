@@ -15,7 +15,7 @@
 }
 
 .card {
-    color: rgb(0, 87, 4);
+    color: #133955;
     font-size: small;
     display: flex;
     flex-direction: column;
@@ -26,7 +26,7 @@
     background-repeat: no-repeat; /* Menghindari pengulangan gambar */
 }
 
-.btn-success {
+.btn-primary {
     margin-bottom: 20px; /* Jarak bawah dari tombol */
 }
 
@@ -37,4 +37,193 @@
   font-style: normal;
 }
 
+.navbar-custom {
+    background-color: #133955; /* Warna navbar */
+  }
+  .navbar-custom .navbar-brand,
+  .navbar-custom .nav-link {
+    color: #fff; /* Warna teks navbar */
+  }
 
+.navbar-toggler{
+    background-color: #fff;
+    color:#0a598d;
+}
+
+.judul_dashboard {
+    font-size: 40px;
+    font-weight: bold;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style:normal
+}
+
+/* KELAS ANGKATAN GURU*/
+
+.card-title {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight:bold;
+    font-style: normal;
+    font-size: xx-large;
+
+}
+
+.Judul_kelas_utama {
+    font-size: 50px;
+    font-weight: bolder;
+    font-family: "Lora", serif;
+    margin-bottom: 50px;
+}
+
+
+/* KELAS VII | VIII | IX */
+
+.Huruf_Angka, .Huruf_Angka_Kedua th, .Huruf_Angka_Kedua td {
+    font-size: medium;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle; /* Ensures vertical centering */
+}
+
+
+.angkatan {
+    font-size: large;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: bold;
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+}
+
+.kelas {
+    font-size: large;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: bold;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #007bff;
+    color: white;
+}
+
+
+.table th, .table td {
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+.table thead th {
+    background-color: #007bff; /* Warna latar belakang header */
+  }
+
+.btn-xs {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    border-radius: 0.2rem;
+}
+
+.btn-primary {
+    /* display: block; */
+    margin: 0 auto;
+}
+
+.fixed-width {
+    width: 100px; /* Sesuaikan lebar sesuai kebutuhan Anda */
+    max-width: 100px; /* Pastikan kolom tidak melebar lebih dari ini */
+    min-width: 100px; /* Pastikan kolom tidak mengecil lebih dari ini */
+    text-overflow: ellipsis; /* Menambahkan elipsis (...) jika konten terlalu panjang */
+    white-space: nowrap; /* Menghindari pembungkusan teks */
+}
+
+/* Dashboard Siswa */
+
+.nomor_nama {
+    text-align: left;
+    display: flex;
+    gap: 8px;
+}
+
+.card-minggu{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-isi-siswa {
+    text-align: left;
+    width: 100%;
+}
+
+/* Siswa kelas (Minggu) */
+
+/* Siswa Kelas (Detail) */
+.siswa-detail{
+    width:100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.siswa-detail-detail{
+    width:100%;
+}
+.siswa-detail-footer{
+    width:100%;
+}
+
+.button-submit-tugas {
+    width: 100%;
+    display: flex;
+    place-items: inherit;
+    align-items: flex-end;
+    justify-items: flex-start;
+    justify-content: flex-end; /* Aligns the button to the right */
+}
+
+/* Adjusting Dropdown and Search Button for Responsiveness */
+@media (max-width: 768px) {
+    .judul_dashboard {
+        font-size: 30px;
+    }
+
+    .table th, .table td {
+        font-size: small;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+
+    .form-select-sm {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .btn-outline-success {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .judul_dashboard {
+        font-size: 25px;
+        width: 100%;
+    }
+
+    .table th, .table td {
+        font-size: x-small;
+        padding: 5px;
+    }
+
+    .form-select-sm {
+        font-size: small;
+    }
+
+    .btn-outline-success {
+        font-size: small;
+    }
+}
